@@ -21,7 +21,7 @@ function Header() {
           <li>
             <AccessTimeFilledTwoToneIcon />
           </li>
-          <li>Лист ожидания</li>
+          <li>Лист ожидаasdaния</li>
         </div>
         <div className={styles.icons}>
           <li>
