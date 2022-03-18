@@ -15,7 +15,7 @@ function Header() {
           <li>
             <PersonAddAltRoundedIcon />
           </li>
-          <li>Добавить пациента</li>
+          <li>Добавить пациsента</li>
         </div>
         <div className={styles.icons}>
           <li>
