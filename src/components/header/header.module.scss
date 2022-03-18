@@ -1,14 +1,17 @@
-
+.wrap {
+  display: flex;
+}
 .header {
-  max-width: 100%;
+  width: 100%;
+  height: 35px;
   min-width: 960px;
   display: flex;
   justify-content: space-between;
   padding: 15px;
   background-color: #f2f6fa;
-  border: solid 1px red;
   .nav {
     width: 700px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -28,6 +31,7 @@
     .icons {
       display: flex;
       align-items: center;
+      padding: 10px;
       svg {
         color: grey;
         margin-right: 10px;
