@@ -12,6 +12,7 @@ function Header() {
       <div className={styles.header}>
         <div className={styles.inputs}>
           <input type="text" placeholder="Поиск пациента" />
+          
         </div>
         <nav className={styles.nav}>
           <div className={styles.icons}>
