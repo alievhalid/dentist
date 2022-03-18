@@ -1,0 +1,49 @@
+.header {
+  max-width: 100%;
+  min-width: 960px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #f2f6fa;
+  .nav {
+    width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 600;
+    div {
+      list-style-type: none;
+    }
+    li {
+      color: rgba(0, 0, 0, 0.541);
+      cursor: pointer;
+      &:hover {
+        color: black;
+        transition: 0.1s;
+      }
+    }
+    .icons {
+      display: flex;
+      align-items: center;
+      svg {
+        color: grey;
+        margin-right: 10px;
+        margin-top: 5px;
+      }
+    }
+  }
+  .inputs input {
+    width: 200px;
+    height: 30px;
+    padding-left: 20px;
+    background-color: #e0e7ee;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    outline: none;
+        &::placeholder {
+            font-style: italic;
+        }
+  }
+}
