@@ -4,11 +4,10 @@ import PersonAddAltRoundedIcon from "@mui/icons-material/PersonAddAltRounded";
 import AccessTimeFilledTwoToneIcon from "@mui/icons-material/AccessTimeFilledTwoTone";
 import TaskRoundedIcon from "@mui/icons-material/TaskRounded";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import Sidebar from "../sidebar/Sidebar";
+import Patients from "../patients/Patients";
 function Header() {
   return (
     <div className={styles.wrap}>
-      <Sidebar />
       <div className={styles.header}>
         <div className={styles.inputs}>
           <input type="text" placeholder="Поиск пациента" />
@@ -40,6 +39,7 @@ function Header() {
           </div>
         </nav>
       </div>
+      <Patients />
     </div>
   );
 }
