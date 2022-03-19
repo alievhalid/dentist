@@ -1,8 +1,9 @@
 .wrap {
-  display: flex;
+  width: 100%;
+  background-color: #f2f6fa;
 }
 .header {
-  width: 100%;
+  max-width: 100%;
   height: 35px;
   min-width: 960px;
   display: flex;
@@ -48,8 +49,8 @@
     border-radius: 20px;
     font-size: 16px;
     outline: none;
-        &::placeholder {
-            font-style: italic;
-        }
+    &::placeholder {
+      font-style: italic;
+    }
   }
 }
