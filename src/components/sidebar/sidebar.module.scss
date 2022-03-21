@@ -1,0 +1,59 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  font-family: "PT Sans", sans-serif;
+  background-color: #f2f6fa;
+  border-right: solid 10px #f1f1f1;
+  .logo {
+    width: 115px;
+    img {
+      width: 115px;
+      margin: 30px 30px 10px 30px;
+    }
+    select {
+      width: 180px;
+      height: 25px;
+      border-radius: 10px;
+      margin-left: 10px;
+      background-color: #e0e7ee;
+      padding-left: 10px;
+      border: solid 1px lightblue;
+      outline: none;
+      option {
+        height: 25px;
+      }
+    }
+  }
+  .nav {
+    margin-top: 40px;
+  }
+  .icons {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px 20px;
+    &:hover {
+      background-color: #fff;
+      color: #0787c9;
+    }
+    li {
+      margin-left: 15px;
+      font-size: 16px;
+      color: #5d6d7c;
+      font-weight: 600;
+      cursor: pointer;
+      &:hover {
+        color: #0787c9;
+      }
+    }
+    svg {
+      font-size: 28px;
+      color: #b5c6d8;
+    }
+  }
+}
+li {
+  list-style-type: none;
+}
