@@ -4,7 +4,6 @@ import PersonAddAltRoundedIcon from "@mui/icons-material/PersonAddAltRounded";
 import AccessTimeFilledTwoToneIcon from "@mui/icons-material/AccessTimeFilledTwoTone";
 import TaskRoundedIcon from "@mui/icons-material/TaskRounded";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import Patients from "../patients/Patients";
 function Header() {
   return (
     <div className={styles.wrap}>
@@ -39,7 +38,6 @@ function Header() {
           </div>
         </nav>
       </div>
-      <Patients />
     </div>
   );
 }

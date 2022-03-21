@@ -10,10 +10,12 @@
   }
   .options {
     display: flex;
-    width: 180px;
+    width: 200px;
     height: 40px;
     justify-content: space-between;
     align-items: center;
+    font-weight: 600;
+    font-size: 18px;
   }
   .nav {
     width: 550px;
@@ -40,7 +42,7 @@
     max-width: 200px;
     display: flex;
     border-radius: 50px;
-    padding: 5px 10px;
+    padding: 5px 15px 5px 10px;
     color: #5d6d7c;
     align-items: center;
     background-color: #f3f3f3;
@@ -70,6 +72,7 @@
   div {
     width: 150px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
+    cursor: pointer;
   }
 }
