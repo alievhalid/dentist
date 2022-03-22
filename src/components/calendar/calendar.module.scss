@@ -1,0 +1,75 @@
+.calendar {
+  max-width: 100%;
+  height: 800px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 30px;
+}
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  nav {
+    min-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .doctor {
+      background-color: #f3f3f3;
+      padding: 10px 15px;
+      border-radius: 30px;
+      color: #5d6d7c;
+      font-family: "PT Sans", sans-serif;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .calendar-icon {
+      padding: 7px 17px;
+      border-radius: 30px;
+      background-color: #f3f3f3;
+      cursor: pointer;
+      svg {
+        color: grey;
+      }
+    }
+  }
+  .icons {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0787c9;
+    padding: 7px 17px;
+    border-radius: 30px;
+    cursor: pointer;
+    li {
+      margin-left: 10px;
+      color: #fff;
+      font-weight: 600;
+    }
+    svg {
+      font-size: 20px;
+      color: #fff;
+      padding-top: 2px;
+    }
+    &:hover {
+      background-color: #399fd4;
+    }
+  }
+  .options {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+  }
+}
+.doctors {
+  max-width: 100%;
+  margin-top: 30px;
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 15px;
+  border-radius: 5px;
+}
+a {
+  color: #0787c9;
+}
