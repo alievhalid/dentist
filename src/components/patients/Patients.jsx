@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./patients.module.scss";
 import TuneIcon from "@mui/icons-material/Tune";
 import GroupsIcon from "@mui/icons-material/Groups";
+import PatientsModal from "./modal/PatientsModal";
 function Patients() {
+  const [modal, setModal] = useState(false)
+
+  const handleAdd = () => {
+    setModal(true)
+  }
   return (
     <div className={styles.main}>
       <div className={styles.wrap}>
@@ -21,7 +27,7 @@ function Patients() {
             <div>Фильтр</div>
           </div>
           <span>
-            <div className={styles.icons}>
+            <div className={styles.icons} onClick={handleAdd}>
               <div>
                 <GroupsIcon />
               </div>
@@ -40,6 +46,7 @@ function Patients() {
         <div>Состояние</div>
         <div>Действия</div>
       </div>
+      {modal && <PatientsModal />}
     </div>
   );
 }

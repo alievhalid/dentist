@@ -64,8 +64,10 @@ a {
   text-decoration: none;
   color: inherit;
 }
-nav a.active div .icons li {
+.active .icons {
   background-color: white;
-  font-size: 50px;
-  color: red;
+  li,
+  svg {
+    color: #0787c9;
+  }
 }

@@ -20,30 +20,45 @@ function Sidebar() {
       </div>
       <nav className={styles.nav}>
         <NavLink to="calendar">
-          <div className={styles.icons}>
-            <div>
-              <CalendarMonthIcon />
+          {({ isActive }) => (
+            <div className={isActive ? styles.active : ""}>
+              <div className={styles.icons}>
+                <div>
+                  <CalendarMonthIcon />
+                </div>
+                <li>Календарь</li>
+              </div>
             </div>
-            <li>Календарь</li>
-          </div>
+          )}
         </NavLink>
         <NavLink to="patients">
-          <div>
-            <div className={styles.icons}>
-              <div>
-                <GroupsIcon />
+          {({ isActive }) => (
+            <div className={isActive ? styles.active : ""}>
+              <div className={styles.icons}>
+                <div>
+                  <GroupsIcon />
+                </div>
+                <li>Пациенты</li>
               </div>
-              <li>Пациенты</li>
             </div>
-          </div>
+          )}
+        </NavLink>
+        <NavLink to={"/"}>
+          {({ isActive }) => (
+            <div className={isActive ? styles.active : " "}></div>
+          )}
         </NavLink>
         <NavLink to="staff">
-          <div className={styles.icons}>
-            <div>
-              <SettingsAccessibilityIcon />
+          {({ isActive }) => (
+            <div className={isActive ? styles.active : " "}>
+              <div className={styles.icons}>
+                <div>
+                  <SettingsAccessibilityIcon />
+                </div>
+                <li>Персонал</li>
+              </div>
             </div>
-            <li>Персонал</li>
-          </div>
+          )}
         </NavLink>
         <div className={styles.icons}>
           <div>

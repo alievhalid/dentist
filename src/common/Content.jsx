@@ -13,6 +13,7 @@ function Content() {
         <Route path="staff" element={<Staff />} />
         <Route path="patients" element={<Patients />} />
         <Route path="calendar" element={<Calendar />} />
+        <Route path="/" element={<Calendar />} />
       </Routes>
     </div>
   );
