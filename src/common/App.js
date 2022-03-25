@@ -7,8 +7,8 @@ function App() {
     <div className="App">
         <Auth/>
       <div className="content">
-        <Sidebar />
-        <Content />
+        {/*<Sidebar />*/}
+        {/*<Content />*/}
       </div>
     </div>
   );
