@@ -5,10 +5,10 @@ import Auth from "../components/auth/Auth";
 function App() {
   return (
     <div className="App">
-        <Auth/>
+        {/*<Auth/>*/}
       <div className="content">
-        {/*<Sidebar />*/}
-        {/*<Content />*/}
+        <Sidebar />
+        <Content />
       </div>
     </div>
   );

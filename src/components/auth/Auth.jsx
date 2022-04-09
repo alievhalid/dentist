@@ -9,26 +9,26 @@ const Auth = () => {
 
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
-    const [empty, setEmpty] = useState(false);
+    const [error, setError] = useState(false);
 
 
     const handleLogin = (e) =>{
         setLogin(e.target.value)
         if (login && password){
-            setEmpty(false)
+            setError(false)
         }
     }
     const handlePass = (e) =>{
         setPassword(e.target.value)
         if (login && password){
-            setEmpty(false)
+            setError(false)
         }
     }
     const handleSubmit = () => {
         if (login && password){
             dispatch(auth(login, password))
         }else {
-            setEmpty(true)
+            setError(true)
         }
 
     }
@@ -39,10 +39,10 @@ const Auth = () => {
                 elevation={7}
                 className={styles.box}>
                 <h2 className={styles.h2} >АВТОРИЗАЦИЯ</h2>
-                {empty ? <div>Введите данные</div> : ''}
+                {error ? <div>Введите данные</div> : ''}
                 <div>
                     <TextField
-                        error={empty}
+                        error={error}
                         id="filled-login-input"
                         label="Login"
                         type="login"
@@ -54,7 +54,7 @@ const Auth = () => {
                         onChange={handleLogin}
                     />
                     <TextField
-                        error={empty}
+                        error={error}
                         id="filled-password-input"
                         label="Password"
                         type="password"
