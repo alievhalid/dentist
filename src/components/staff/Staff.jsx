@@ -1,8 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./staff.module.scss";
 import TuneIcon from "@mui/icons-material/Tune";
 import GroupsIcon from "@mui/icons-material/Groups";
+import {Button, Dialog} from "@mui/material";
+import AddStaff from "./AddStaff";
+
+
 function Staff() {
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () =>{
+    setOpen(true)
+  }
+  const handleClose = () =>{
+    setOpen(false)
+  }
   return (
     <div className={styles.main}>
       <div className={styles.wrap}>
@@ -24,7 +36,16 @@ function Staff() {
               <div>
                 <GroupsIcon />
               </div>
-              <div>Добавить</div>
+              <Button onClick={handleClickOpen}>Добавить</Button>
+              <Dialog
+                  open={open}
+                  onClose={handleClose}
+                  aria-labelledby="form-dialog"
+                  maxWidth={"md"}
+                  fullWidth
+              >
+                      <AddStaff setOpen={setOpen} handleClose={handleClose}/>
+              </Dialog>
             </div>
           </span>
         </div>

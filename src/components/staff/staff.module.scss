@@ -3,6 +3,7 @@
   height: 850px;
   background-color: #fff;
 }
+
 .wrap {
   max-width: 100%;
   padding: 20px;
@@ -92,7 +93,7 @@
     margin-right: 20px;
   }
   nav {
-    width: 1400px;
+    max-width: 1400px;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -1,0 +1,83 @@
+.main {
+  max-width: 100%;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #fff;
+  height: 800px;
+}
+.main .wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.main .options {
+  display: flex;
+  width: 200px;
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 18px;
+}
+.main .nav {
+  width: 550px;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+.main .nav input {
+  width: 220px;
+  height: 35px;
+  padding-left: 20px;
+  border: solid 1px #b5c6d8;
+  border-radius: 20px;
+  font-size: 16px;
+  outline: none;
+}
+.main .nav input::-moz-placeholder {
+  font-style: italic;
+}
+.main .nav input:-ms-input-placeholder {
+  font-style: italic;
+}
+.main .nav input::placeholder {
+  font-style: italic;
+}
+.main .icons {
+  max-width: 200px;
+  display: flex;
+  border-radius: 50px;
+  padding: 5px 15px 5px 10px;
+  color: #5d6d7c;
+  align-items: center;
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+.main .icons div {
+  margin-left: 10px;
+}
+.main .icons svg {
+  font-size: 20px;
+  padding-top: 4px;
+}
+.main span .icons {
+  background-color: #0787c9;
+  color: #fff;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  max-width: 100%;
+  background-color: #f2f6fa;
+  padding: 15px;
+}
+.filters div {
+  width: 150px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}/*# sourceMappingURL=patients.module.css.map */

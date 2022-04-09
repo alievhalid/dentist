@@ -8,6 +8,7 @@ import FolderCopyIcon from "@mui/icons-material/FolderCopy";
 import WarehouseIcon from "@mui/icons-material/Warehouse";
 import CalculateIcon from "@mui/icons-material/Calculate";
 import BallotIcon from "@mui/icons-material/Ballot";
+import { NavLink } from "react-router-dom";
 function Sidebar() {
   return (
     <div className={styles.sidebar}>
@@ -18,24 +19,32 @@ function Sidebar() {
         </select>
       </div>
       <nav className={styles.nav}>
-        <div className={styles.icons}>
-          <div>
-            <CalendarMonthIcon />
+        <NavLink to="calendar">
+          <div className={styles.icons}>
+            <div>
+              <CalendarMonthIcon />
+            </div>
+            <li>Календарь</li>
           </div>
-          <li>Календарь</li>
-        </div>
-        <div className={styles.icons}>
+        </NavLink>
+        <NavLink to="patients">
           <div>
-            <GroupsIcon />
+            <div className={styles.icons}>
+              <div>
+                <GroupsIcon />
+              </div>
+              <li>Пациенты</li>
+            </div>
           </div>
-          <li>Пациенты</li>
-        </div>
-        <div className={styles.icons}>
-          <div>
-            <SettingsAccessibilityIcon />
+        </NavLink>
+        <NavLink to="staff">
+          <div className={styles.icons}>
+            <div>
+              <SettingsAccessibilityIcon />
+            </div>
+            <li>Персонал</li>
           </div>
-          <li>Персонал</li>
-        </div>
+        </NavLink>
         <div className={styles.icons}>
           <div>
             <FolderCopyIcon />
