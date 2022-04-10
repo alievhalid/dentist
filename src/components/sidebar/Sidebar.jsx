@@ -13,13 +13,15 @@ function Sidebar() {
   return (
     <div className={styles.sidebar}>
       <div className={styles.logo}>
-        <img src={logo} alt="" />
+        <a href="/">
+          <img src={logo} alt="" />
+        </a>
         <select>
           <option>Основной</option>
         </select>
       </div>
       <nav className={styles.nav}>
-        <NavLink to="calendar">
+        <NavLink to="/calendar">
           {({ isActive }) => (
             <div className={isActive ? styles.active : ""}>
               <div className={styles.icons}>
@@ -31,7 +33,7 @@ function Sidebar() {
             </div>
           )}
         </NavLink>
-        <NavLink to="patients">
+        <NavLink to="/patients">
           {({ isActive }) => (
             <div className={isActive ? styles.active : ""}>
               <div className={styles.icons}>
@@ -48,7 +50,7 @@ function Sidebar() {
             <div className={isActive ? styles.active : " "}></div>
           )}
         </NavLink>
-        <NavLink to="staff">
+        <NavLink to="/staff">
           {({ isActive }) => (
             <div className={isActive ? styles.active : " "}>
               <div className={styles.icons}>

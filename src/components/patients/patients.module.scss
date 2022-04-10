@@ -16,9 +16,9 @@
     align-items: center;
     font-weight: 600;
     font-size: 18px;
-      div {
-        width: 100px;
-      }
+    div {
+      width: 100px;
+    }
   }
   .nav {
     width: 550px;
@@ -62,9 +62,9 @@
     .icons {
       background-color: #0787c9;
       color: #fff;
-        &:hover {
-          background-color: #399fd4;
-        }
+      &:hover {
+        background-color: #399fd4;
+      }
     }
   }
 }
@@ -74,11 +74,53 @@
   margin-top: 30px;
   max-width: 100%;
   background-color: #f2f6fa;
-  padding: 10px;
+  padding: 15px;
+  border-bottom: 1px solid #dee2e6;
   div {
-    width: 150px;
+    width: 200px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
+  }
+  .id {
+    width: 50px;
+  }
+}
+.patients {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  max-width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  div {
+    width: 200px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-weight: 400;
+  }
+  .id {
+    width: 50px;
+  }
+  .name,
+  .number {
+    color: #0787c9;
+      &:hover {
+        color: red;
+      }
+  }
+  .patients-icons {
+    display: flex;
+    div {
+      width: 20px;
+      margin-right: 20px;
+    }
+    svg {
+      color: grey;
+    }
+  }
+  span {
+    color: grey;
   }
 }
