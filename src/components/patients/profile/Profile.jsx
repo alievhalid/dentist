@@ -135,6 +135,7 @@ function Profile() {
             {({ isActive }) => (
               <div className={isActive ? styles.active : ""}>Формула</div>
             )}
+            
           </NavLink>
           <div>Оплаты</div>
           <div>Депозит</div>
