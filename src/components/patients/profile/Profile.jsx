@@ -136,6 +136,7 @@ function Profile() {
               <div className={isActive ? styles.active : ""}>Формула</div>
             )}
           </NavLink>
+          
           <div>Оплаты</div>
           <div>Депозит</div>
           <div>Семейный счет</div>
