@@ -1,78 +1,69 @@
 import React, {useState} from 'react';
-import {Button, Paper, TextField} from "@mui/material";
+import {Button, Grid, Paper, TextField} from "@mui/material";
 import {useDispatch} from "react-redux";
 import styles from './auth.module.scss';
 import {auth} from "../../redux/auth/authReducer";
+import {useFormik} from "formik";
+import * as Yup from "yup";
+import TextInput from "../inputs/TextInput";
+import PasswordInput from "../inputs/PasswordInput";
 
 const Auth = () => {
     const dispatch =useDispatch();
 
-    const [login, setLogin] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState(false);
+    const formik = useFormik({
+        initialValues: {
+            login: "",
+            password: "",
+        },
+        validationSchema: Yup.object({
+            login: Yup.string()
+                .matches(/^[a-z0-9_-]{3,16}$/, "Только латинские буквы и цыфры")
+                .required("Обязательное поле!"),
+            password: Yup.string()
+                .matches(/^[a-z0-9_-]{3,16}$/, "Только латинские буквы и цыфры")
+                .required("Обязательное поле!"),
 
-
-    const handleLogin = (e) =>{
-        setLogin(e.target.value)
-        if (login && password){
-            setError(false)
-        }
-    }
-    const handlePass = (e) =>{
-        setPassword(e.target.value)
-        if (login && password){
-            setError(false)
-        }
-    }
-    const handleSubmit = () => {
-        if (login && password){
-            dispatch(auth(login, password))
-        }else {
-            setError(true)
-        }
-
-    }
+        }),
+        onSubmit: (values) => dispatch(auth(values.login, values.password)),
+    });
 
     return (
         <div className={styles.auth}>
             <Paper
                 elevation={7}
                 className={styles.box}>
-                <h2 className={styles.h2} >АВТОРИЗАЦИЯ</h2>
-                {error ? <div>Введите данные</div> : ''}
-                <div>
-                    <TextField
-                        error={error}
-                        id="filled-login-input"
-                        label="Login"
-                        type="login"
-                        autoComplete="current-login"
-                        variant="outlined"
-                        fullWidth
-                        margin="normal"
-                        value={login}
-                        onChange={handleLogin}
-                    />
-                    <TextField
-                        error={error}
-                        id="filled-password-input"
-                        label="Password"
-                        type="password"
-                        autoComplete="current-password"
-                        variant="outlined"
-                        fullWidth
-                        margin="normal"
-                        value={password}
-                        onChange={handlePass}
-                    />
-                    <Button onClick={handleSubmit}
-                            className={styles.btn}
-                            variant="contained"
-                            color="primary"
-                    >
-                        Войти
-                    </Button>
-                </div>
+                <form onSubmit={formik.handleSubmit}>
+                    <h2 className={styles.h2} >АВТОРИЗАЦИЯ</h2>
+                    <div>
+                        <Grid container spacing={{ md: 2 }} columns={12}>
+                            <Grid item xs={12}>
+                                <TextInput
+                                    formik={formik}
+                                    name='login'
+                                    label='Логин'
+                                />
+                            </Grid>
+                            <Grid item xs={12}  >
+                                <PasswordInput
+                                    name='password'
+                                    label='Пароль'
+                                    formik={formik}
+                                />
+                            </Grid>
+                            <Grid item xs={12}  >
+                                <Button
+                                    fullWidth
+                                    type='submit'
+                                    variant="contained"
+                                    color="primary"
+                                >
+                                    Войти
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </div>
+                </form>
             </Paper>
         </div>
     );

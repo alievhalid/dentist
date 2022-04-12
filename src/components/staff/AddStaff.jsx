@@ -214,14 +214,14 @@ const AddStaff = ({ handleClose }) => {
             />
           </Grid>
           <Grid item xs={6}>
-            {/*<Button*/}
-            {/*    variant="outlined"*/}
-            {/*    fullWidth*/}
-            {/*    size="large"*/}
-            {/*    // onClick={handleClose}*/}
-            {/*>*/}
-            {/*    Отмена*/}
-            {/*</Button>*/}
+            <Button
+                variant="outlined"
+                fullWidth
+                size="large"
+                // onClick={handleClose}
+            >
+                Отмена
+            </Button>
           </Grid>
           <Grid item xs={6}>
             <Button type="submit" variant="contained" fullWidth size="large">
