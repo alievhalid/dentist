@@ -26,6 +26,7 @@ const AddStaff = ({ handleClose }) => {
       login: "",
       password: "",
       repeatPassword: "",
+      role: "dentist"
     },
     validationSchema: Yup.object({
       firstName: Yup.string()
