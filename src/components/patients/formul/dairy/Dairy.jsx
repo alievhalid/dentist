@@ -4,7 +4,7 @@ function Dairy() {
   return (
     <div className={styles.teeth}>
       <div>55</div>
-      <div>554</div>
+      <div>54</div>
       <div>53</div>
       <div>52</div>
       <div>51</div>

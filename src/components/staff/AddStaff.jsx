@@ -88,7 +88,6 @@ const AddStaff = ({ handleClose }) => {
 
   return (
     <div className={style.wrap}>
-      <h2>Добавить сотрудника</h2>
       <form onSubmit={formik.handleSubmit}>
         <Grid container spacing={{ md: 2 }} columns={12}>
           <Grid item xs={4}>
@@ -214,14 +213,14 @@ const AddStaff = ({ handleClose }) => {
             />
           </Grid>
           <Grid item xs={6}>
-            {/*<Button*/}
-            {/*    variant="outlined"*/}
-            {/*    fullWidth*/}
-            {/*    size="large"*/}
-            {/*    // onClick={handleClose}*/}
-            {/*>*/}
-            {/*    Отмена*/}
-            {/*</Button>*/}
+            <Button
+              variant="outlined"
+              fullWidth
+              size="large"
+              onClick={handleClose}
+            >
+              Отмена
+            </Button>
           </Grid>
           <Grid item xs={6}>
             <Button type="submit" variant="contained" fullWidth size="large">
