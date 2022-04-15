@@ -4,15 +4,19 @@
   justify-content: center;
   align-items: center;
   .box{
-    width: 600px;
+    width: 400px;
     padding: 30px;
     margin: auto;
   }
   .h2{
     text-align: center;
   }
-  .btn{
-    width: 100px;
-    margin-top: 20px;
+  .error{
+    color: red;
+    text-align: center;
   }
+  //.btn{
+  //  width: 100px;
+  //  margin-top: 20px;
+  //}
 }

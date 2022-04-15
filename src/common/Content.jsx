@@ -5,14 +5,21 @@ import Header from "../components/header/Header";
 import Patients from "../components/patients/Patients";
 import Staff from "../components/staff/Staff";
 import styles from "./content.module.scss";
+import Profile from "../components/patients/profile/Profile";
+import Visit from "../components/patients/visit/Visit";
+import Formul from "../components/patients/formul/Formul";
 function Content() {
   return (
     <div className={styles.content}>
       <Header />
       <Routes>
-        <Route path="staff" element={<Staff />} />
-        <Route path="patients" element={<Patients />} />
-        <Route path="calendar" element={<Calendar />} />
+        <Route path="/staff" element={<Staff />} />
+        <Route path="/patients" element={<Patients />} />
+        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/" element={<Calendar />} />
+        <Route path="/patients/profile" element={<Profile />} />
+        <Route path="/patients/profile/visit" element={<Visit />} />
+        <Route path="/patients/profile/formula" element={<Formul />} />
       </Routes>
     </div>
   );

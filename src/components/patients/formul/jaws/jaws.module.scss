@@ -1,0 +1,14 @@
+.jaws {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  img {
+    width: 500px;
+    height: 300px;
+    &:hover {
+      width: 550px;
+      height: 350px;
+      transition: 1s;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.modal {
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.26);
+  .wrap {
+    max-width: 1000px;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    background-color: #fff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 400px;
+  }
+  nav {
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px;
+    li {
+      width: 250px;
+      margin-bottom: 30px;
+      input {
+        width: 250px;
+        border-radius: 5px;
+        outline: none;
+        height: 40px;
+        border: solid 1px grey;
+        margin-top: 5px;
+      }
+      span {
+        color: #87939e;
+      }
+    }
+    select {
+      width: 256px;
+      height: 47px;
+      outline: none;
+      border-radius: 5px;
+      border: solid 1px grey;
+      margin-top: 5px;
+    }
+  }
+  .add {
+    width: 560px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: 600;
+    margin: 0 auto;
+    div {
+      max-width: 100px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-align: center;
+      color: #0787c9;
+      border: solid 1px #0787c9;
+      cursor: pointer;
+      &:hover {
+        color: #399fd4;
+      }
+    }
+    span div {
+      background-color: #0787c9;
+      color: #fff;
+      margin-left: 10px;
+      cursor: pointer;
+      &:hover {
+        color: #fff;
+        background-color: #399fd4;
+      }
+    }
+  }
+  .patient {
+      margin-left: 35px;
+      color: #399fd4;
+      font-size: 22px;
+  }
+}

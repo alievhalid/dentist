@@ -13,37 +13,54 @@ function Sidebar() {
   return (
     <div className={styles.sidebar}>
       <div className={styles.logo}>
-        <img src={logo} alt="" />
+        <a href="/">
+          <img src={logo} alt="" />
+        </a>
         <select>
           <option>Основной</option>
         </select>
       </div>
       <nav className={styles.nav}>
-        <NavLink to="calendar">
-          <div className={styles.icons}>
-            <div>
-              <CalendarMonthIcon />
-            </div>
-            <li>Календарь</li>
-          </div>
-        </NavLink>
-        <NavLink to="patients">
-          <div>
-            <div className={styles.icons}>
-              <div>
-                <GroupsIcon />
+        <NavLink to="/calendar">
+          {({ isActive }) => (
+            <div className={isActive ? styles.active : ""}>
+              <div className={styles.icons}>
+                <div>
+                  <CalendarMonthIcon />
+                </div>
+                <li>Календарь</li>
               </div>
-              <li>Пациенты</li>
             </div>
-          </div>
+          )}
         </NavLink>
-        <NavLink to="staff">
-          <div className={styles.icons}>
-            <div>
-              <SettingsAccessibilityIcon />
+        <NavLink to="/patients">
+          {({ isActive }) => (
+            <div className={isActive ? styles.active : ""}>
+              <div className={styles.icons}>
+                <div>
+                  <GroupsIcon />
+                </div>
+                <li>Пациенты</li>
+              </div>
             </div>
-            <li>Персонал</li>
-          </div>
+          )}
+        </NavLink>
+        <NavLink to={"/"}>
+          {({ isActive }) => (
+            <div className={isActive ? styles.active : " "}></div>
+          )}
+        </NavLink>
+        <NavLink to="/staff">
+          {({ isActive }) => (
+            <div className={isActive ? styles.active : " "}>
+              <div className={styles.icons}>
+                <div>
+                  <SettingsAccessibilityIcon />
+                </div>
+                <li>Персонал</li>
+              </div>
+            </div>
+          )}
         </NavLink>
         <div className={styles.icons}>
           <div>

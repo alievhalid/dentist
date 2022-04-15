@@ -3,7 +3,7 @@
   height: 100vh;
   font-family: "PT Sans", sans-serif;
   background-color: #f2f6fa;
-  border-right: solid 10px #f1f1f1;
+  border-right: solid 15px #f1f1f1;
   .logo {
     width: 115px;
     img {
@@ -64,8 +64,10 @@ a {
   text-decoration: none;
   color: inherit;
 }
-nav a.active div .icons li {
+.active .icons {
   background-color: white;
-  font-size: 50px;
-  color: red;
+  li,
+  svg {
+    color: #0787c9;
+  }
 }
