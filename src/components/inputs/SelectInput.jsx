@@ -18,10 +18,7 @@ const SelectInput = ({name, formik, array, label, multiple, required}) => {
                 required={required}
                 fullWidth
                 SelectProps={{
-                    // name: name,
                     multiple: multiple,
-                    // value: formik.values[name],
-                    // onChange: formik.handleChange
                 }}
             >
                 {array.map(item => (
