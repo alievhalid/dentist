@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {Button, Grid, Paper, TextField} from "@mui/material";
-import {useDispatch} from "react-redux";
+import React from 'react';
+import {Button, Grid, Paper} from "@mui/material";
+import {useDispatch, useSelector} from "react-redux";
 import styles from './auth.module.scss';
 import {auth} from "../../redux/auth/authReducer";
 import {useFormik} from "formik";
@@ -10,6 +10,7 @@ import PasswordInput from "../inputs/PasswordInput";
 
 const Auth = () => {
     const dispatch =useDispatch();
+    const {error} = useSelector((state) =>  state.authReducer)
 
     const formik = useFormik({
         initialValues: {
@@ -37,6 +38,9 @@ const Auth = () => {
                     <h2 className={styles.h2} >АВТОРИЗАЦИЯ</h2>
                     <div>
                         <Grid container spacing={{ md: 2 }} columns={12}>
+                            <Grid item xs={12}>
+                                {error? <div className={styles.error}>{error}</div>: null}
+                            </Grid>
                             <Grid item xs={12}>
                                 <TextInput
                                     formik={formik}

@@ -51,8 +51,6 @@ const authReducer = (state= initialState, action) => {
 
         if (json.error) {
             dispatch({ type: "user/singIn/rejected", payload: json });
-            console.log(json.error)
-
         } else {
             dispatch({ type: "user/singIn/fulfilled", payload: json });
             localStorage.setItem("token", json.token);

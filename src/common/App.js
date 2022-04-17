@@ -1,6 +1,5 @@
 import Sidebar from "../components/sidebar/Sidebar";
 import Content from "./Content";
-import Auth from "../components/auth/Auth";
 // import Auth from "../components/auth/Auth";
 
 function App() {
@@ -10,9 +9,9 @@ function App() {
       <div className="content">
         <Sidebar />
         <Content />
-      </div>*
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;

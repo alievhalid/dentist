@@ -26,6 +26,8 @@ const AddStaff = ({ handleClose }) => {
       login: "",
       password: "",
       repeatPassword: "",
+      color: '',
+      role: "dentist"
     },
     validationSchema: Yup.object({
       firstName: Yup.string()
@@ -151,7 +153,17 @@ const AddStaff = ({ handleClose }) => {
               type="tel"
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={8}>
+            <SelectInput
+                required={true}
+                name="speciality"
+                formik={formik}
+                multiple={true}
+                array={specialties}
+                label="Специальность"
+            />
+          </Grid>
+          <Grid item xs={3}>
             <SelectInput
               required={true}
               formik={formik}
@@ -161,7 +173,16 @@ const AddStaff = ({ handleClose }) => {
               label="Пол"
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={3}>
+            <TextInput
+                type="color"
+                required={false}
+                formik={formik}
+                name="color"
+                label="цвет"
+            />
+          </Grid>
+          <Grid item xs={3}>
             <TextInput
               name="salary"
               formik={formik}
@@ -169,22 +190,12 @@ const AddStaff = ({ handleClose }) => {
               type="number"
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={3}>
             <TextInput
               name="percent"
               formik={formik}
               label="Процент"
               type="number"
-            />
-          </Grid>
-          <Grid item xs={8}>
-            <SelectInput
-              required={true}
-              name="speciality"
-              formik={formik}
-              multiple={true}
-              array={specialties}
-              label="Специальность"
             />
           </Grid>
           <Grid item xs={4}>
