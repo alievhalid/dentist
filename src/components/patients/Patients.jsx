@@ -1,11 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./patients.module.scss";
 import TuneIcon from "@mui/icons-material/Tune";
 import GroupsIcon from "@mui/icons-material/Groups";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { NavLink } from "react-router-dom";
+import { Dialog } from "@mui/material";
+import AddPatients from "./AddPatients"
+
 function Patients() {
+  const [open, setOpen] = useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <div className={styles.main}>
       <div className={styles.wrap}>
@@ -28,7 +38,21 @@ function Patients() {
               <div>
                 <GroupsIcon />
               </div>
-              <div>Добавить</div>
+              <div onClick={handleClickOpen}>Добавить</div>
+              <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="form-dialog"
+                maxWidth={"md"}
+                fullWidth
+              >
+                <div className={styles.title}>
+                  <h2>
+                    Добавить пациента
+                  </h2>
+                  <AddPatients setOpen={setOpen} handleClose={handleClose} />
+                </div>
+              </Dialog>
             </div>
           </span>
         </div>
@@ -45,7 +69,7 @@ function Patients() {
       </div>
       <div className={styles.patients}>
         <div className={styles.id}>3211</div>
-        <NavLink to={'/patients/profile'}>
+        <NavLink to={'/patients/profile/visit'}>
           <div className={styles.name}>Алиев Халид Ханзалатович</div>
         </NavLink>
         <div className={styles.number}>79633971674</div>
