@@ -26,7 +26,7 @@ const AddStaff = ({ handleClose }) => {
       login: "",
       password: "",
       repeatPassword: "",
-      color: '',
+      color: '#65CCE6',
       role: "dentist"
     },
     validationSchema: Yup.object({
@@ -61,7 +61,7 @@ const AddStaff = ({ handleClose }) => {
         .matches(/^[a-z0-9_-]{3,16}$/, "Только латинские буквы и цыфры")
         .min(8, "Минимум 8 символов!")
         .required("Обязательное поле"),
-      repeatPassword: Yup.string()
+      repeatPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Пароли не совпадают!')
         .matches(/^[a-z0-9_-]{3,16}$/, "Только латинские буквы и цыфры")
         .min(8, "Минимум 8 символов!")
         .required("Обязательное поле"),
