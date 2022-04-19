@@ -1,10 +1,10 @@
 import React from "react";
 import { Button, Grid } from "@mui/material";
-import TextInput from "../inputs/TextInput";
-import PasswordInput from "../inputs/PasswordInput";
+import TextInput from "../../inputs/TextInput";
+import PasswordInput from "../../inputs/PasswordInput";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import styles from "./addAdmin.module.scss";
+import styles from "./add-admin.module.scss";
 function AddAdmin({ handleClose }) {
   const formik = useFormik({
     initialValues: {
@@ -15,6 +15,7 @@ function AddAdmin({ handleClose }) {
       email: "",
       login: "",
       password: "",
+      role: 'admin'
     },
     validationSchema: Yup.object({
       firstName: Yup.string()
@@ -109,7 +110,7 @@ function AddAdmin({ handleClose }) {
           </Grid>
           <Grid item xs={6}>
             <Button type="submit" variant="contained" fullWidth size="large">
-              Зарегистрировать врача
+              Зарегистрировать администратора
             </Button>
           </Grid>
         </Grid>
