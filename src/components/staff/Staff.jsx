@@ -3,27 +3,12 @@ import styles from "./staff.module.scss";
 import TuneIcon from "@mui/icons-material/Tune";
 import GroupsIcon from "@mui/icons-material/Groups";
 import { Dialog } from "@mui/material";
-import AddStaff from "./AddStaff";
-import AddAdmin from "./AddAdmin";
+import AddDentist from "./add-dentist/AddDentist";
+import AddAdmin from "./add-admin/AddAdmin";
+import AddStaffDialog from "./AddStaffDialog";
 
 function Staff() {
-  const [open, setOpen] = useState(false);
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const [staff, setStaff] = useState(true);
-  const [admin, setAdmin] = useState(false);
-  const handleStaff = () => {
-    setStaff(true);
-    setAdmin(false);
-  };
-  const handleAdmin = () => {
-    setAdmin(true);
-    setStaff(false);
-  };
+
   return (
     <div className={styles.main}>
       <div className={styles.wrap}>
@@ -45,28 +30,7 @@ function Staff() {
               <div>
                 <GroupsIcon />
               </div>
-              <div onClick={handleClickOpen}>Добавить</div>
-              <Dialog
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="form-dialog"
-                maxWidth={"md"}
-                fullWidth
-              >
-                <div className={styles.title}>
-                  <h2 onClick={handleStaff} className={staff ? styles.active : ''}>
-                    Добавить доктора
-                  </h2>
-                  <h2 onClick={handleAdmin} className={admin ? styles.active : ''}>
-                    Добавить администратора
-                  </h2>
-                </div>
-                {staff ? (
-                  <AddStaff setOpen={setOpen} handleClose={handleClose} />
-                ) : (
-                  <AddAdmin />
-                )}
-              </Dialog>
+              <AddStaffDialog/>
             </div>
           </span>
         </div>
