@@ -1,15 +1,15 @@
 import React from "react";
 import { Button, Grid } from "@mui/material";
-import TextInput from "../inputs/TextInput";
-import SelectInput from "../inputs/SelectInput";
-import DateInput from "../inputs/DateInput";
-import NumberInput from "../inputs/NumberInput";
-import PasswordInput from "../inputs/PasswordInput";
+import TextInput from "../../inputs/TextInput";
+import SelectInput from "../../inputs/SelectInput";
+import DateInput from "../../inputs/DateInput";
+import NumberInput from "../../inputs/NumberInput";
+import PasswordInput from "../../inputs/PasswordInput";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import style from "./add-staff.module.scss";
+import style from "./add-dentist.module.scss";
 
-const AddStaff = ({ handleClose }) => {
+const AddDentist = ({ handleClose }) => {
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -244,4 +244,4 @@ const AddStaff = ({ handleClose }) => {
   );
 };
 
-export default AddStaff;
+export default AddDentist;
