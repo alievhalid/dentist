@@ -21,33 +21,9 @@ function Profile() {
         <nav>
           <div className={styles.icons}>
             <div>
-              <SummarizeIcon />
-            </div>
-            <div>Анкета</div>
-          </div>
-          <div className={styles.icons}>
-            <div>
-              <SummarizeIcon />
-            </div>
-            <div>Договор</div>
-          </div>
-          <div className={styles.icons}>
-            <div>
-              <PaidIcon />
-            </div>
-            <div>Оплата</div>
-          </div>
-          <div className={styles.icons}>
-            <div>
               <EditIcon />
             </div>
             <div>Редактировать</div>
-          </div>
-          <div className={styles.icons}>
-            <div>
-              <LocalPrintshopIcon />
-            </div>
-            <div>Печать</div>
           </div>
           <span>
             <div className={styles.icons}>
@@ -135,7 +111,7 @@ function Profile() {
             {({ isActive }) => (
               <div className={isActive ? styles.active : ""}>Формула</div>
             )}
-          </NavLink>    
+          </NavLink>
           <div>Оплаты</div>
           <div>Депозит</div>
           <div>Семейный счет</div>
