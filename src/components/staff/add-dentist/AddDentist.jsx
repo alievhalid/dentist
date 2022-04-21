@@ -1,15 +1,15 @@
 import React from "react";
 import { Button, Grid } from "@mui/material";
-import TextInput from "../inputs/TextInput";
-import SelectInput from "../inputs/SelectInput";
-import DateInput from "../inputs/DateInput";
-import NumberInput from "../inputs/NumberInput";
-import PasswordInput from "../inputs/PasswordInput";
+import TextInput from "../../inputs/TextInput";
+import SelectInput from "../../inputs/SelectInput";
+import DateInput from "../../inputs/DateInput";
+import NumberInput from "../../inputs/NumberInput";
+import PasswordInput from "../../inputs/PasswordInput";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import style from "./add-staff.module.scss";
+import style from "./add-dentist.module.scss";
 
-const AddStaff = ({ handleClose }) => {
+const AddDentist = ({ handleClose }) => {
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -26,7 +26,7 @@ const AddStaff = ({ handleClose }) => {
       login: "",
       password: "",
       repeatPassword: "",
-      color: '',
+      color: '#65CCE6',
       role: "dentist"
     },
     validationSchema: Yup.object({
@@ -61,7 +61,7 @@ const AddStaff = ({ handleClose }) => {
         .matches(/^[a-z0-9_-]{3,16}$/, "Только латинские буквы и цыфры")
         .min(8, "Минимум 8 символов!")
         .required("Обязательное поле"),
-      repeatPassword: Yup.string()
+      repeatPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Пароли не совпадают!')
         .matches(/^[a-z0-9_-]{3,16}$/, "Только латинские буквы и цыфры")
         .min(8, "Минимум 8 символов!")
         .required("Обязательное поле"),
@@ -244,4 +244,4 @@ const AddStaff = ({ handleClose }) => {
   );
 };
 
-export default AddStaff;
+export default AddDentist;

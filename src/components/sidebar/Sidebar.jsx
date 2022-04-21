@@ -62,12 +62,19 @@ function Sidebar() {
             </div>
           )}
         </NavLink>
-        <div className={styles.icons}>
-          <div>
-            <FolderCopyIcon />
-          </div>
-          <li>Услуги</li>
-        </div>
+        <NavLink to="/services">
+          {({ isActive }) => (
+              <div className={isActive ? styles.active : " "}>
+                <div className={styles.icons}>
+                  <div>
+                    <FolderCopyIcon />
+                  </div>
+                  <li>Услуги</li>
+                </div>
+              </div>
+          )}
+        </NavLink>
+
         <div className={styles.icons}>
           <div>
             <WarehouseIcon />

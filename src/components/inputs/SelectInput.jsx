@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+    Chip,
     FormControl, FormHelperText,
     InputLabel,
     MenuItem,
@@ -17,6 +18,13 @@ const SelectInput = ({name, formik, array, label, multiple, required}) => {
                 label={label}
                 required={required}
                 fullWidth
+                error={!!formik?.errors[name] && formik.touched[name]}
+                helperText={
+                    formik.errors[name] && formik.touched[name] ? (
+                        <span>{formik.errors[name]}</span>
+                    ) : null
+                }
+                onBlur={formik.handleBlur}
                 SelectProps={{
                     multiple: multiple,
                 }}
