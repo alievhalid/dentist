@@ -17,8 +17,6 @@ function AddPatients({ handleClose }) {
       date: "",
       email: "",
       gender: "",
-      login: "",
-      password: "",
     },
     validationSchema: Yup.object({
       firstName: Yup.string()
@@ -36,16 +34,13 @@ function AddPatients({ handleClose }) {
         ),
       date: Yup.date(),
       email: Yup.string().email("Введите валидный Email!"),
-      login: Yup.string()
-        .matches(/^[a-z0-9_-]{3,16}$/, "Только латинские буквы и цыфры")
-        .min(6, "Минимум 6 символов")
-        .required("Обязательное поле!"),
     }),
-    onSubmit: (values) => console.log(JSON.stringify(values, null, 2)),
+    onSubmit: (values) => console.log(JSON.stringify(values, null, 2))
   });
   const selectGender = [{ title: "муж" }, { title: "жен" }];
   return (
-    <div className={styles.wrap}>
+    <div className={styles.wrap} >
+      <form onSubmit={formik.handleSubmit}>
       <Grid container spacing={{ md: 3 }} columns={12}>
         <Grid item xs={4}>
           <TextInput
@@ -75,15 +70,6 @@ function AddPatients({ handleClose }) {
         </Grid>
         <Grid item xs={4}>
           <TextInput
-            name="login"
-            formik={formik}
-            label="Логин"
-            type="login"
-            required={true}
-          />
-        </Grid>
-        <Grid item xs={4}>
-          <TextInput
             id={"email"}
             label="Email"
             formik={formik}
@@ -91,12 +77,13 @@ function AddPatients({ handleClose }) {
             type="email"
           />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={4}>
           <SelectInput
             required={true}
             formik={formik}
             name="gender"
             multiple={false}
+            fullWidth
             array={selectGender}
             label="Пол"
           />
@@ -118,6 +105,14 @@ function AddPatients({ handleClose }) {
             type="tel"
           />
         </Grid>
+        <Grid item xs={4}>
+          <NumberInput
+            formik={formik}
+            name="phoneNumber"
+            label="Номер телефона 2"
+            type="tel"
+          />
+        </Grid>
         <Grid item xs={6}>
           <Button
             variant="outlined"
@@ -129,11 +124,12 @@ function AddPatients({ handleClose }) {
           </Button>
         </Grid>
         <Grid item xs={6}>
-          <Button type="submit" variant="contained" fullWidth size="large">
+          <Button  type="submit" variant="contained" fullWidth size="large">
             Зарегистрировать врача
           </Button>
         </Grid>
       </Grid>
+      </form>
     </div>
   );
 }

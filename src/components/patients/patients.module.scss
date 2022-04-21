@@ -42,16 +42,17 @@
     }
   }
   .icons {
-    max-width: 200px;
     display: flex;
-    border-radius: 50px;
-    padding: 5px 15px 5px 10px;
-    color: #5d6d7c;
-    align-items: center;
-    background-color: #f3f3f3;
-    cursor: pointer;
+      padding: 8px 15px;
+      border-radius: 30px;
+      margin-right: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: #f3f3f3;
+      align-items: center;
+      cursor: pointer;
     div {
-      margin-left: 10px;
+      margin-left: 8px;
     }
     svg {
       font-size: 20px;

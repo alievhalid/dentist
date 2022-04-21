@@ -25,7 +25,8 @@ function Calendar() {
       </div>
       <div className={styles.doctors}>
         <div>
-            У вас не заведено ни одного врача. Добавить врача можно <a href="/patients">здесь</a>
+          У вас не заведено ни одного врача. Добавить врача можно{" "}
+          <a href="/patients">здесь</a>
         </div>
       </div>
     </div>
