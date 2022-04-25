@@ -6,9 +6,8 @@ import { Dialog } from "@mui/material";
 import AddDentist from "./add-dentist/AddDentist";
 import AddAdmin from "./add-admin/AddAdmin";
 import AddStaffDialog from "./AddStaffDialog";
-
+import { NavLink } from "react-router-dom";
 function Staff() {
-
   return (
     <div className={styles.main}>
       <div className={styles.wrap}>
@@ -30,7 +29,7 @@ function Staff() {
               <div>
                 <GroupsIcon />
               </div>
-              <AddStaffDialog/>
+              <AddStaffDialog />
             </div>
           </span>
         </div>
