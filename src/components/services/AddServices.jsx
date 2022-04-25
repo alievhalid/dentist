@@ -4,12 +4,17 @@ import * as Yup from "yup";
 import {Button, Grid} from "@mui/material";
 import TextInput from "../inputs/TextInput";
 import styles from "./add-sevices.module.scss"
+import {useDispatch, useSelector} from "react-redux";
+import {createService, editService} from "../../redux/service/serviceReducer";
+import {LoadingButton} from "@mui/lab";
 
-const AddServices = () => {
+const AddServices = ({handleClose, item}) => {
+    const addLoading = useSelector(state => state.serviceReducer.addLoading);
+    const dispatch =useDispatch();
     const formik = useFormik({
         initialValues: {
-            service: "",
-            price: 0,
+            service: item? item.service : "",
+            price: item? item.price : 0,
         },
         validationSchema: Yup.object({
             service: Yup.string()
@@ -18,9 +23,17 @@ const AddServices = () => {
                 .required("Обязательное поле!"),
 
         }),
-        onSubmit: (values) => console.log(JSON.stringify(values, null, 2)),
+        onSubmit: item?
+            (values) => dispatch(editService(item._id, values.service, values.price))
+            :
+            (values) => dispatch(createService(values.service, values.price))
     });
-    return (
+
+
+
+
+
+     return (
         <div className={styles.wrap}>
             <form onSubmit={formik.handleSubmit}>
                 <h3>Добавление услуги</h3>
@@ -44,16 +57,30 @@ const AddServices = () => {
                                 type='number'
                             />
                         </Grid>
-                        <Grid item xs={12}  >
+                        <Grid item xs={6}>
                             <Button
+                                variant="outlined"
+                                fullWidth
+                                size="large"
+                                onClick={handleClose}
+                            >
+                                Отмена
+                            </Button>
+                        </Grid>
+                        <Grid item xs={6}  >
+                            <Button
+                                disabled={!formik.values.service}
                                 fullWidth
                                 type='submit'
                                 variant="contained"
                                 color="primary"
+                                size="large"
+                                onClick={handleClose}
                             >
-                                Войти
+                                {item? "Сохранить изменения" +
+                                    "" : "Добавить"}
                             </Button>
-                        </Grid>
+                    </Grid>
                     </Grid>
                 </div>
             </form>
