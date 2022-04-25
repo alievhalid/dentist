@@ -8,7 +8,7 @@ import styles from "./content.module.scss";
 import Profile from "../components/patients/profile/Profile";
 import Visit from "../components/patients/visit/Visit";
 import Formul from "../components/patients/formul/Formul";
-import Services from "../components/services/Services";
+import ServiceList from "../components/services/ServiceList";
 function Content() {
   return (
     <div className={styles.content}>
@@ -17,7 +17,7 @@ function Content() {
         <Route path="/staff" element={<Staff />} />
         <Route path="/patients" element={<Patients />} />
         <Route path="/calendar" element={<Calendar />} />
-        <Route path="/services" element={<Services/>} />
+        <Route path="/services" element={<ServiceList/>} />
         <Route path="/" element={<Calendar />} />
         <Route path="/patients/profile" element={<Profile />} />
         <Route path="/patients/profile/visit" element={<Visit />} />
