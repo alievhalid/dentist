@@ -1,28 +1,26 @@
 import React, {useState} from 'react';
 import {Dialog} from "@mui/material";
 import styles from "./staff.module.scss";
-import AddDentist from "./dentist/AddDentist";
+import AddDentist from "./add-dentist/AddDentist";
 import AddAdmin from "./add-admin/AddAdmin";
 
 const AddStaffDialog = () => {
     const [open, setOpen] = useState(false);
-    const [doctor, setDoctor] = useState(true);
-    const [admin, setAdmin] = useState(false);
-
     const handleClickOpen = () => {
         setOpen(true);
     };
     const handleClose = () => {
         setOpen(false);
     };
-
+    const [staff, setStaff] = useState(true);
+    const [admin, setAdmin] = useState(false);
     const handleStaff = () => {
-        setDoctor(true);
+        setStaff(true);
         setAdmin(false);
     };
     const handleAdmin = () => {
         setAdmin(true);
-        setDoctor(false);
+        setStaff(false);
     };
 
     return (
@@ -36,14 +34,14 @@ const AddStaffDialog = () => {
                 fullWidth
             >
                 <div className={styles.title}>
-                    <h2 onClick={handleStaff} className={doctor ? styles.active : ''}>
+                    <h2 onClick={handleStaff} className={staff ? styles.active : ''}>
                         Добавить доктора
                     </h2>
                     <h2 onClick={handleAdmin} className={admin ? styles.active : ''}>
                         Добавить администратора
                     </h2>
                 </div>
-                {doctor ? (
+                {staff ? (
                     <AddDentist setOpen={setOpen} handleClose={handleClose} />
                 ) : (
                     <AddAdmin />

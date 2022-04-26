@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import styles from "./staff.module.scss";
-import DentistList from "./dentist/DentistList";
-
 import TuneIcon from "@mui/icons-material/Tune";
 import GroupsIcon from "@mui/icons-material/Groups";
 import { Dialog } from "@mui/material";
@@ -12,7 +10,6 @@ import { NavLink } from "react-router-dom";
 function Staff() {
   return (
     <div className={styles.main}>
-      <DentistList/>
       <div className={styles.wrap}>
         <div className={styles.options}>
           <div>Персонал</div>

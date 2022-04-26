@@ -8,11 +8,8 @@ import PasswordInput from "../../inputs/PasswordInput";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import style from "./add-dentist.module.scss";
-import {useDispatch} from "react-redux";
-import {createDentist} from "../../../redux/dentists/dentistsReducer";
 
 const AddDentist = ({ handleClose }) => {
-  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -20,7 +17,7 @@ const AddDentist = ({ handleClose }) => {
       fathersName: "",
       phoneNumber: "",
       secondPhoneNumber: "",
-      birthday: "",
+      date: "",
       email: "",
       gender: "",
       salary: "",
@@ -69,24 +66,7 @@ const AddDentist = ({ handleClose }) => {
         .min(8, "Минимум 8 символов!")
         .required("Обязательное поле"),
     }),
-    onSubmit: (values) => dispatch(
-        createDentist(
-            values.firstName,
-            values.lastName,
-            values.fathersName,
-            values.phoneNumber,
-            values.secondPhoneNumber,
-            values.birthday,
-            values.email,
-            values.gender,
-            values.salary,
-            values.percent,
-            values.speciality,
-            values.login,
-            values.password,
-            values.color,
-            values.role
-        ))
+    onSubmit: (values) => console.log(JSON.stringify(values, null, 2)),
   });
   const specialties = [
     { title: "Терапевт" },
@@ -150,7 +130,7 @@ const AddDentist = ({ handleClose }) => {
           <Grid item xs={4}>
             <DateInput
               formik={formik}
-              name="birthday"
+              name="date"
               required={true}
               label="Дата рождения"
             />
