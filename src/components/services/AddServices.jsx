@@ -4,8 +4,7 @@ import * as Yup from "yup";
 import { Button, Grid } from "@mui/material";
 import TextInput from "../inputs/TextInput";
 import styles from "./add-sevices.module.scss";
-
-const AddServices = () => {
+const AddServices = ({ handleClose, item }) => {
   const formik = useFormik({
     initialValues: {
       service: "",
@@ -40,14 +39,27 @@ const AddServices = () => {
                 type="number"
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={6}>
               <Button
+                variant="outlined"
+                fullWidth
+                size="large"
+                onClick={handleClose}
+              >
+                Отмена
+              </Button>
+            </Grid>
+            <Grid item xs={6}>
+              <Button
+                disabled={!formik.values.service}
                 fullWidth
                 type="submit"
                 variant="contained"
                 color="primary"
+                size="large"
+                onClick={handleClose}
               >
-                Войти
+                {item ? "Сохранить изменения" + "" : "Добавить"}
               </Button>
             </Grid>
           </Grid>
