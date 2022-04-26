@@ -9,12 +9,14 @@ import Profile from "../components/patients/profile/Profile";
 import Visit from "../components/patients/visit/Visit";
 import Formul from "../components/patients/formul/Formul";
 import ServiceList from "../components/services/ServiceList";
+import DentistList from "../components/staff/dentist/DentistList";
 function Content() {
   return (
     <div className={styles.content}>
       <Header />
       <Routes>
         <Route path="/staff" element={<Staff />} />
+        <Route path="/staff/doctors" element={<DentistList />} />
         <Route path="/patients" element={<Patients />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/services" element={<ServiceList/>} />
