@@ -6,6 +6,8 @@ import {DatePicker, LocalizationProvider} from '@mui/lab';
 export default function DateInput({required, formik, name,label}) {
     
     return (
+
+
          <LocalizationProvider dateAdapter={AdapterDateFns}>
              <TextField
                  name={name}

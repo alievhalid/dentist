@@ -125,6 +125,4 @@ const DentistList = () => {
     );
 };
 
-
-
 export default DentistList;

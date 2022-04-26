@@ -6,22 +6,20 @@ import AddServices from "./AddServices";
 import {deleteService, loadServices} from "../../redux/service/serviceReducer";
 import {useDispatch, useSelector} from "react-redux";
 
-
-
 const Service = ({item}) => {
 
     const [open, setOpen] = useState(false);
     const dispatch = useDispatch()
 
-    const handleClose = () => {
-        setOpen(false);
-    };
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-    const handleDelete = (id) =>{
-        dispatch(deleteService(id))
-    }
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleDelete = (id) => {
+    dispatch(deleteService(id));
+  };
 
     return (
         <TableRow key={item._id}>
@@ -52,5 +50,4 @@ const Service = ({item}) => {
         </TableRow>
     );
 };
-
 export default Service;
