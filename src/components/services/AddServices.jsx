@@ -6,7 +6,6 @@ import TextInput from "../inputs/TextInput";
 import styles from "./add-sevices.module.scss"
 import {useDispatch, useSelector} from "react-redux";
 import {createService, editService} from "../../redux/service/serviceReducer";
-import {LoadingButton} from "@mui/lab";
 
 const AddServices = ({handleClose, item}) => {
     const addLoading = useSelector(state => state.serviceReducer.addLoading);
@@ -28,10 +27,6 @@ const AddServices = ({handleClose, item}) => {
             :
             (values) => dispatch(createService(values.service, values.price))
     });
-
-
-
-
 
      return (
         <div className={styles.wrap}>
