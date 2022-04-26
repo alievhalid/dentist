@@ -1,12 +1,19 @@
-import React, {useState} from 'react';
-import {Button, ButtonGroup, Dialog, TableCell, TableRow} from "@mui/material";
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
+import React, { useState } from "react";
+import {
+  Button,
+  ButtonGroup,
+  Dialog,
+  TableCell,
+  TableRow,
+} from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 import AddServices from "./AddServices";
-import {deleteService, loadServices} from "../../redux/service/serviceReducer";
-import {useDispatch, useSelector} from "react-redux";
-
-
+import {
+  deleteService,
+  loadServices,
+} from "../../redux/service/serviceReducer";
+import { useDispatch, useSelector } from "react-redux";
 
 const Service = ({item}) => {
 
@@ -51,6 +58,5 @@ const Service = ({item}) => {
             </TableCell>
         </TableRow>
     );
-};
 
 export default Service;
