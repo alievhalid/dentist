@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 import { createLogger } from "redux-logger";
 import authReducer from "./auth/authReducer";
 import serviceReducer from "./service/serviceReducer";
+import dentistsReducer from "./dentists/dentistsReducer";
 import patientsReducer from "./patients/patientsReducer"
 
 const logger = createLogger({
@@ -13,6 +14,7 @@ const logger = createLogger({
 const rootReducer = combineReducers({
   authReducer,
   serviceReducer,
+  dentistsReducer
   patients: patientsReducer,
 });
 
