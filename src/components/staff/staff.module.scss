@@ -74,10 +74,10 @@
       width: 120px;
       cursor: pointer;
       padding-bottom: 10px;
-      border-bottom: 2px solid #fff;
+      border-bottom: 3px solid #fff;
       text-align: center;
       &:hover {
-        border-bottom: 2px solid #0787c9;
+        border-bottom: 3px solid #0787c9;
       }
     }
   }
@@ -108,18 +108,18 @@
   }
 }
 .recordings {
-    margin: 20px 0;
-    font-size: 14px;
-    color: #5d6d7c;
+  margin: 20px 0;
+  font-size: 14px;
+  color: #5d6d7c;
 }
 .title {
   display: flex;
   padding: 10px;
   margin-left: 10px;
-    h2 {
-      margin-left: 20px;
-      cursor: pointer;
-    }
+  h2 {
+    margin-left: 20px;
+    cursor: pointer;
+  }
 }
 .active {
   color: #1976d2;

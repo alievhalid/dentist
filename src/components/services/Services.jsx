@@ -1,13 +1,17 @@
 import React, { useState } from "react";
-import styles from "./staff.module.scss";
+import styles from "../staff/staff.module.scss";
 import TuneIcon from "@mui/icons-material/Tune";
 import GroupsIcon from "@mui/icons-material/Groups";
 import { Dialog } from "@mui/material";
-import AddDentist from "./add-dentist/AddDentist";
-import AddAdmin from "./add-admin/AddAdmin";
-import AddStaffDialog from "./AddStaffDialog";
-import { NavLink } from "react-router-dom";
-function Staff() {
+import AddServices from "./AddServices";
+const Services = () => {
+  const [open, setOpen] = useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <div className={styles.main}>
       <div className={styles.wrap}>
@@ -29,7 +33,16 @@ function Staff() {
               <div>
                 <GroupsIcon />
               </div>
-              <AddStaffDialog />
+              <div onClick={handleClickOpen}>Добавить</div>
+              <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="form-dialog"
+                maxWidth={"sm"}
+                fullWidth
+              >
+                <AddServices setOpen={setOpen} handleClose={handleClose} />
+              </Dialog>
             </div>
           </span>
         </div>
@@ -57,6 +70,6 @@ function Staff() {
       </div>
     </div>
   );
-}
+};
 
-export default Staff;
+export default Services;
