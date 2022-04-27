@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Dialog} from "@mui/material";
 import styles from "./staff.module.scss";
-import AddDentist from "./add-dentist/AddDentist";
+import AddDentist from "./dentist/AddDentist"
 import AddAdmin from "./add-admin/AddAdmin";
 
 const AddStaffDialog = () => {
