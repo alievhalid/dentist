@@ -11,7 +11,7 @@ import {
     TextField
 } from "@mui/material";
 import ArticleIcon from "@mui/icons-material/Article";
-import ServicePreloader from "../../services/ServicePreloader";
+import TablePreloader from "../../preloaders/TablePreloader";
 import {useDispatch, useSelector} from "react-redux";
 import {loadDentistList} from "../../../redux/dentists/dentistsReducer";
 import Dentist from "./Dentist";
@@ -99,7 +99,7 @@ const DentistList = () => {
                     </TableHead>
                     <TableBody>
                         {loading?
-                            <ServicePreloader/> :
+                            <TablePreloader/> :
                             dentists.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 .map((item) => {
                                     return (

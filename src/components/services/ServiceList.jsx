@@ -18,7 +18,7 @@ import AddServices from "./AddServices";
 import { useDispatch, useSelector } from "react-redux";
 import { loadServices } from "../../redux/service/serviceReducer";
 import Service from "./Service";
-import ServicePreloader from "./ServicePreloader";
+import TablePreloader from "../preloaders/TablePreloader";
 
 const ServiceList = () => {
   const [page, setPage] = useState(0);
@@ -106,7 +106,7 @@ const ServiceList = () => {
           </TableHead>
           <TableBody>
             {loading ? (
-              <ServicePreloader />
+              <TablePreloader />
             ) : (
               services
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
