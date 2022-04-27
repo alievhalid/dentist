@@ -3,7 +3,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Skeleton } from "@mui/material";
 
-const ServicePreloader = () => {
+const TablePreloader = () => {
   return (
     <>
       <TableRow>
@@ -230,4 +230,4 @@ const ServicePreloader = () => {
   );
 };
 
-export default ServicePreloader;
+export default TablePreloader;
