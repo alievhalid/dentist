@@ -33,8 +33,7 @@ const authReducer = (state= initialState, action) => {
             }
     }
 }
-
- export const auth = (login, password) =>{
+export const auth = (login, password) =>{
     return async (dispatch) => {
         dispatch({ type: "user/signIn/pending" });
         const response = await fetch('http://localhost:4000/login', {

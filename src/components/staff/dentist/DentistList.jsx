@@ -11,9 +11,7 @@ import {
     TextField
 } from "@mui/material";
 import ArticleIcon from "@mui/icons-material/Article";
-import AddServices from "../../services/AddServices";
 import ServicePreloader from "../../services/ServicePreloader";
-import Service from "../../services/Service";
 import {useDispatch, useSelector} from "react-redux";
 import {loadDentistList} from "../../../redux/dentists/dentistsReducer";
 import Dentist from "./Dentist";
