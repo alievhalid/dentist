@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import {Button, ButtonGroup, Dialog, TableCell, TableRow} from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import AddServices from "../../services/AddServices";
 import DeleteIcon from "@mui/icons-material/Delete";
 import {useDispatch} from "react-redux";
-import {deleteService} from "../../../redux/service/serviceReducer";
 import AddDentist from "./AddDentist";
+import {deleteDentist} from "../../../redux/dentists/dentistsReducer";
 
 const Dentist = ({item}) => {
 
@@ -19,7 +18,7 @@ const Dentist = ({item}) => {
         setOpen(true);
     };
     const handleDelete = (id) =>{
-        dispatch(deleteService(id))
+        dispatch(deleteDentist(id))
     }
 
     return (

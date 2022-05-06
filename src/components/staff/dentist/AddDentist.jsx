@@ -9,27 +9,27 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import style from "./add-dentist.module.scss";
 import {useDispatch} from "react-redux";
-import {createDentist} from "../../../redux/dentists/dentistsReducer";
+import {createDentist, editDentist} from "../../../redux/dentists/dentistsReducer";
 
-const AddDentist = ({ handleClose }) => {
+const AddDentist = ({ handleClose, item }) => {
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
-      firstName: "",
-      lastName: "",
-      fathersName: "",
-      phoneNumber: "",
-      secondPhoneNumber: "",
-      birthday: "",
-      email: "",
-      gender: "",
-      salary: "",
-      percent: "",
-      speciality: [],
-      login: "",
+      firstName: item? item.firstName : "",
+      lastName: item? item.lastName : "",
+      fathersName: item? item.fathersName : "",
+      phoneNumber: item? item.phoneNumber : "",
+      secondPhoneNumber: item? item.secondPhoneNumber : "",
+      birthday: item? item.birthday : "",
+      email: item? item.email : "",
+      gender: item? item.gender : "",
+      salary: item? item.salary : "",
+      percent: item? item.percent : "",
+      speciality: item? item.speciality : [],
+      login: item? item.login : "",
       password: "",
       repeatPassword: "",
-      color: '#65CCE6',
+      color: item? item.service : "#65CCE6",
       role: "dentist"
     },
     validationSchema: Yup.object({
@@ -69,24 +69,45 @@ const AddDentist = ({ handleClose }) => {
         .min(8, "Минимум 8 символов!")
         .required("Обязательное поле"),
     }),
-    onSubmit: (values) => dispatch(
-        createDentist(
-            values.firstName,
-            values.lastName,
-            values.fathersName,
-            values.phoneNumber,
-            values.secondPhoneNumber,
-            values.birthday,
-            values.email,
-            values.gender,
-            values.salary,
-            values.percent,
-            values.speciality,
-            values.login,
-            values.password,
-            values.color,
-            values.role
-        ))
+    onSubmit: (values) => item ?
+        dispatch(
+            editDentist(
+                values.firstName,
+                values.lastName,
+                values.fathersName,
+                values.phoneNumber,
+                values.secondPhoneNumber,
+                values.birthday,
+                values.email,
+                values.gender,
+                values.salary,
+                values.percent,
+                values.speciality,
+                values.login,
+                values.password,
+                values.color,
+                values.role,
+                item._id
+            ))
+        :
+        dispatch(
+            createDentist(
+                values.firstName,
+                values.lastName,
+                values.fathersName,
+                values.phoneNumber,
+                values.secondPhoneNumber,
+                values.birthday,
+                values.email,
+                values.gender,
+                values.salary,
+                values.percent,
+                values.speciality,
+                values.login,
+                values.password,
+                values.color,
+                values.role
+            ))
   });
   const specialties = [
     { title: "Терапевт" },
@@ -254,8 +275,14 @@ const AddDentist = ({ handleClose }) => {
             </Button>
           </Grid>
           <Grid item xs={6}>
-            <Button type="submit" variant="contained" fullWidth size="large">
-              Зарегистрировать врача
+            <Button
+                type="submit"
+                variant="contained"
+                fullWidth
+                size="large"
+                onClick={formik.values.password.length >= 8 ?  handleClose : false}
+            >
+              {item ? "Сохранить изменения" : "Зарегистрировать врача"}
             </Button>
           </Grid>
         </Grid>
