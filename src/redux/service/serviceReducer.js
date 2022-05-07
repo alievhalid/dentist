@@ -83,6 +83,8 @@ const serviceReducer = (state = initialState, action) => {
         services: state.services.filter((item) => {
           if (item._id !== action.payload) {
             return item;
+          } else {
+            return false
           }
         }),
       };

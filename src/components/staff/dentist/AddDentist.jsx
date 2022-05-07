@@ -9,7 +9,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import style from "./add-dentist.module.scss";
 import {useDispatch} from "react-redux";
-import {createDentist} from "../../../redux/dentists/dentistsReducer";
+import {addClients} from "../../../redux/patients/patientsReducer";
 
 const AddDentist = ({ handleClose }) => {
   const dispatch = useDispatch();
@@ -70,7 +70,7 @@ const AddDentist = ({ handleClose }) => {
         .required("Обязательное поле"),
     }),
     onSubmit: (values) => dispatch(
-        createDentist(
+      addClients(
             values.firstName,
             values.lastName,
             values.fathersName,

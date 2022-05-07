@@ -16,19 +16,11 @@ import {
   TextField,
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
-import AddPatients from "./AddPatients";
+import AddPatients from "./add-patients/AddPatients";
 import Patient from "./Patient";
 function PatientList() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-  const dispatch = useDispatch();
-  const state = useSelector((state) => state.serviceReducer);
-  const services = state.services;
-  const loading = state.loading;
-  const addLoading = state.addLoading;
-
   const [open, setOpen] = useState(false);
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -59,7 +51,7 @@ function PatientList() {
                   placeholder="Поиск по таблице"
                 />
               </TableCell>
-              <TableCell sx={{ padding: "14px", }} align={"right"}>
+              <TableCell colSpan={6} sx={{ padding: "14px" }} align={"right"}>
                 <Button
                   variant="contained"
                   startIcon={<ArticleIcon />}
@@ -84,7 +76,7 @@ function PatientList() {
           </TableHead>
           <TableHead>
             <TableRow>
-              <TableCell sx={{ padding: "14px", width: "50px"}}>
+              <TableCell sx={{ padding: "14px", width: "50px" }}>
                 <span>ID</span>
               </TableCell>
               <TableCell sx={{ padding: "14px" }}>
@@ -94,29 +86,23 @@ function PatientList() {
                 <span>Телефон</span>
               </TableCell>
               <TableCell sx={{ padding: "14px" }}>
-                <span>Карточка</span>
+                <span>email</span>
               </TableCell>
               <TableCell sx={{ padding: "14px" }}>
                 <span>Возраст</span>
               </TableCell>
               <TableCell sx={{ padding: "14px" }}>
-                <span>Депозит</span>
-              </TableCell>
-              <TableCell align="center" sx={{ padding: "14px" }}>
-                <span>Состояние</span>
-              </TableCell>
-              <TableCell align="center" sx={{ padding: "14px" }}>
                 <span>Действия</span>
               </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {load
-              ? "ads"
+              ? null
               : patients
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map((item, index) => {
-                    return <Patient key={item._id} item={item} id={index} />;
+                    return <Patient key={index} item={item} index={index} />;
                   })}
           </TableBody>
         </Table>

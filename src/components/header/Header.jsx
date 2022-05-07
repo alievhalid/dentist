@@ -5,7 +5,7 @@ import AccessTimeFilledTwoToneIcon from "@mui/icons-material/AccessTimeFilledTwo
 import TaskRoundedIcon from "@mui/icons-material/TaskRounded";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { Dialog } from "@mui/material";
-import AddPatients from "../patients/AddPatients";
+import AddPatients from "../patients/add-patients/AddPatients";
 function Header() {
   const [open, setOpen] = useState(false);
   const handleClickOpen = () => {

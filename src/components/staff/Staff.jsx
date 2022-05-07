@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./staff.module.scss";
 import TuneIcon from "@mui/icons-material/Tune";
 import GroupsIcon from "@mui/icons-material/Groups";
 import AddStaffDialog from "./AddStaffDialog";
-import { NavLink } from "react-router-dom";
 import DentistList from "./dentist/DentistList";
 function Staff() {
   return (
