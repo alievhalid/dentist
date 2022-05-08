@@ -164,7 +164,7 @@ const AddPatients = ({ handleClose, item }) => {
             </Button>
           </Grid>
           <Grid item xs={6}>
-            <Button type="submit" variant="contained" fullWidth size="large">
+            <Button onClick={handleClose} type="submit" variant="contained" fullWidth size="large">
               Зарегистрировать врача
             </Button>
           </Grid>

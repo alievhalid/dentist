@@ -67,18 +67,18 @@ const patientsReducer = (state = initialState, action) => {
           }
         }),
       };
-    case " clients/edit/start":
+    case "client/edit/start":
       return {
         ...state,
         editLoad: true,
       };
-    case " clients/edit/error":
+    case "client/edit/error":
       return {
         ...state,
         editLoad: false,
         error: action.payload,
       };
-    case " clients/edit/success":
+    case "client/edit/success":
       return {
         ...state,
         editLoad: false,
@@ -184,7 +184,7 @@ export const clientsEdit = (
 ) => {
   return async (dispatch) => {
     dispatch({
-      type: "clients/edit/start",
+      type: "client/edit/start",
     });
     const response = await fetch(`http://localhost:4000/clients/edit/${_id}`, {
       method: "PATCH",
@@ -204,10 +204,9 @@ export const clientsEdit = (
     });
     const json = await response.json();
     if (json.error) {
-      dispatch({ type: "clients/edit/error", payload: json });
+      dispatch({ type: "client/edit/error", payload: json.error });
     } else {
-      dispatch({ type: "clients/edit/success", payload: json });
+      dispatch({ type: "client/edit/success", payload: json });
     }
-    console.log(json);
   };
 };

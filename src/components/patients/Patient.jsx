@@ -56,7 +56,11 @@ function PatientsList({ item, id, index }) {
       >
         <div className={styles.title}>
           <h2>Редактировать пациента</h2>
-          <AddPatients item={item} setOpen={setOpen} handleClose={handleClose} />
+          <AddPatients
+            item={item}
+            setOpen={setOpen}
+            handleClose={handleClose}
+          />
         </div>
       </Dialog>
       <TableCell size="small" align="center">
