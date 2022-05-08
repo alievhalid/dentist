@@ -16,7 +16,7 @@ function Content() {
       <Header />
       <Routes>
         <Route path="/staff" element={<Staff />} />
-          <Route path="/staff/doctors" element={<DentistList />} />
+        <Route path="/staff/doctors" element={<DentistList />} />
         <Route path="/patients" element={<Patients />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/services" element={<ServiceList/>} />

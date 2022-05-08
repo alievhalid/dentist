@@ -7,11 +7,12 @@ import {
   TableRow,
 } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import AddServices from "../../services/AddServices";
 import DeleteIcon from "@mui/icons-material/Delete";
+
 import { useDispatch } from "react-redux";
-import { deleteService } from "../../../redux/service/serviceReducer";
+
 import AddDentist from "./AddDentist";
+import {deleteDentist} from "../../../redux/dentists/dentistsReducer";
 
 const Dentist = ({ item }) => {
   const [open, setOpen] = useState(false);
