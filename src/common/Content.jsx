@@ -21,9 +21,9 @@ function Content() {
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/services" element={<ServiceList/>} />
         <Route path="/" element={<Calendar />} />
-        <Route path="/patients/profile" element={<Profile />} />
-        <Route path="/patients/profile/visit" element={<Visit />} />
-        <Route path="/patients/profile/formula" element={<Formul />} />
+        <Route path={"/patients/profile/:id"} element={<Profile />} />
+        <Route path={"/patients/profile/visit/:id"} element={<Visit />} />
+        <Route path={"/patients/profile/formula/:id"} element={<Formul />} />
       </Routes>
     </div>
   );
