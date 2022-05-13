@@ -50,7 +50,7 @@ function Sidebar() {
             <div className={isActive ? styles.active : " "}></div>
           )}
         </NavLink>
-        <NavLink to="/staff">
+        <NavLink to="/staff/doctors">
           {({ isActive }) => (
             <div className={isActive ? styles.active : " "}>
               <div className={styles.icons}>

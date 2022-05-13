@@ -81,7 +81,7 @@ const dentistsReducer = (state= initialState, action) => {
                 ...state,
                 deleteLoading: false,
                 dentists: state.dentists.filter((item) => {
-                    if (item._id !== action.payload) {
+                    if (item.id !== action.payload) {
                         return item;
                     }
                 }),
@@ -239,7 +239,6 @@ export const loadDentistList = () =>{
         } else {
             dispatch({ type: "dentist/loading/success", payload: json });
         }
-        console.log(json)
     }
 }
 

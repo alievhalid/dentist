@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Dialog } from "@mui/material";
 import styles from "./staff.module.scss";
 import AddDentist from "./dentist/AddDentist";
-import AddAdmin from "./add-admin/AddAdmin";
+import AddAdmin from "../../redux/admin/adminReducer";
 
 const AddStaffDialog = () => {
   const [open, setOpen] = useState(false);
@@ -33,19 +33,12 @@ const AddStaffDialog = () => {
         maxWidth={"md"}
         fullWidth
       >
-        <div className={styles.title}>
-          <h2 onClick={handleStaff} className={staff ? styles.active : ""}>
-            Добавить доктора
-          </h2>
-          <h2 onClick={handleAdmin} className={admin ? styles.active : ""}>
-            Добавить администратора
-          </h2>
-        </div>
-        {staff ? (
+        <AddDentist />
+        {/* {staff ? (
           <AddDentist setOpen={setOpen} handleClose={handleClose} />
         ) : (
           <AddAdmin />
-        )}
+        )} */}
       </Dialog>
     </>
   );

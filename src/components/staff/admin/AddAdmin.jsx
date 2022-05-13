@@ -5,17 +5,19 @@ import PasswordInput from "../../inputs/PasswordInput";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import styles from "./add-admin.module.scss";
-function AddAdmin({ handleClose }) {
+import { addAdmin, editAdmin } from "../../../redux/admin/adminReducer";
+import { useDispatch } from "react-redux";
+function AddAdmin({ handleClose, item }) {
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
-      firstName: "",
-      lastName: "",
-      fathersName: "",
-      date: "",
-      email: "",
-      login: "",
+      firstName: item.firstName? item.firstName : "",
+      lastName:  item.lastName? item.lastName : "",
+      fathersName:  item.fathersName? item.fathersName : "",
+      email:  item.email? item.email : "",
+      login: item.login? item.login : "",
       password: "",
-      role: 'admin'
+      role: "admin",
     },
     validationSchema: Yup.object({
       firstName: Yup.string()
@@ -25,11 +27,6 @@ function AddAdmin({ handleClose }) {
         .min(3, "Минимум 3 символа!")
         .required("Обязательное поле!"),
       fathersName: Yup.string().min(3, "Минимум 3 символа!"),
-      secondPhoneNumber: Yup.string().matches(
-        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-        "Не валидный номер"
-      ),
-      date: Yup.date(),
       email: Yup.string().email("Введите валидный Email!"),
       login: Yup.string()
         .matches(/^[a-z0-9_-]{3,16}$/, "Только латинские буквы и цыфры")
@@ -40,7 +37,29 @@ function AddAdmin({ handleClose }) {
         .min(8, "Минимум 8 символов!")
         .required("Обязательное поле"),
     }),
-    onSubmit: (values) => console.log(JSON.stringify(values, null, 2)),
+    onSubmit: item.firstName? (values) =>
+    dispatch(
+      editAdmin(
+        values.firstName,
+        values.lastName,
+        values.fathersName,
+        values.email,
+        values.login,
+        values.password,
+        item._id
+      )
+    ) : (values) =>
+    dispatch(
+      addAdmin(
+        values.firstName,
+        values.lastName,
+        values.fathersName,
+        values.email,
+        values.login,
+        values.password,
+        values.role
+      )
+    )
   });
   return (
     <div className={styles.wrap}>
@@ -109,8 +128,15 @@ function AddAdmin({ handleClose }) {
             </Button>
           </Grid>
           <Grid item xs={6}>
-            <Button type="submit" variant="contained" fullWidth size="large">
-              Зарегистрировать администратора
+            <Button
+              disabled={!formik.values.firstName}
+              onClick={handleClose}
+              type="submit"
+              variant="contained"
+              fullWidth
+              size="large"
+            >
+              {item.firstName ? "Сохранить изменения" + "" : "Добавить"}
             </Button>
           </Grid>
         </Grid>
