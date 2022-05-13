@@ -8,11 +8,12 @@ import {
 } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { useDispatch } from "react-redux";
-import AddDentist from "./AddDentist";
-import { deleteDentist } from "../../../redux/dentists/dentistsReducer";
+import { useDispatch, useSelector } from "react-redux";
+import AddAdmin from "./AddAdmin";
+import { deleteAdmin } from "../../../redux/admin/adminReducer";
+import { NavLink } from "react-router-dom";
 
-const Dentist = ({ item }) => {
+const Admins = ({ item }) => {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
 
@@ -23,19 +24,21 @@ const Dentist = ({ item }) => {
     setOpen(true);
   };
   const handleDelete = (id) => {
-    dispatch(deleteDentist(id));
+    dispatch(deleteAdmin(item._id));
   };
-
+  const loading = useSelector((state) => state.admins);
   return (
-    <TableRow key={item._id}>
+    <TableRow>
       <TableCell size="small" align="left">
-        {item.firstName} {item.lastName} {item.fathersName}
+        <NavLink to={`/staff/admins/adminProfile/${item._id}`}>
+          {item?.firstName} {item?.lastName}
+        </NavLink>
       </TableCell>
       <TableCell size="small" align="left">
-        {item.email}
+        {item?.email}
       </TableCell>
       <TableCell size="small" align="left">
-        {item.phoneNumber}
+        {item?.login}
       </TableCell>
       <TableCell size="small" align="center">
         <ButtonGroup
@@ -53,13 +56,13 @@ const Dentist = ({ item }) => {
             maxWidth={"md"}
             fullWidth
           >
-            <AddDentist
+            <AddAdmin
+              addLoading={loading}
               item={item}
               setOpen={setOpen}
               handleClose={handleClose}
             />
           </Dialog>
-
           <Button onClick={() => handleDelete(item._id)} color="error">
             <DeleteIcon />{" "}
           </Button>
@@ -69,4 +72,4 @@ const Dentist = ({ item }) => {
   );
 };
 
-export default Dentist;
+export default Admins;
