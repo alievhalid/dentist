@@ -4,7 +4,6 @@ import PaidIcon from "@mui/icons-material/Paid";
 import EditIcon from "@mui/icons-material/Edit";
 import AddTaskIcon from "@mui/icons-material/AddTask";
 import logo from "../../../../images/logo.png";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -16,7 +15,6 @@ function Profile() {
     })
   );
   const loadProfile = useSelector((state) => state.admins.loading);
-  const name = profile?.firstName + profile?.lastName + profile?.fathersName;
   return (
     <div>
       {loadProfile ? (
