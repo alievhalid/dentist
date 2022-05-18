@@ -11,6 +11,7 @@ import ServiceList from "../components/services/ServiceList";
 import DentistList from "../components/staff/dentist/DentistList";
 import AdminList from "../components/staff/admin/AdminList";
 import AdminProfile from "../components/staff/admin/adminProfile/AdminProfile";
+import DentistProfile from "../components/staff/dentist/dentistProfile/DentistProfile";
 function Content() {
   return (
     <div className={styles.content}>
@@ -26,6 +27,7 @@ function Content() {
         <Route path={"/patients/profile/visit/:id"} element={<Visit />} />
         <Route path={"/patients/profile/formula/:id"} element={<Formul />} />
         <Route path={"/staff/admins/adminProfile/:id"} element={<AdminProfile/>} />
+        <Route path={"/staff/doctors/doctorProfile/:id"} element={<DentistProfile />} />
       </Routes>
     </div>
   );
