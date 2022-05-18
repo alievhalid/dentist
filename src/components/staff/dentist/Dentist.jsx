@@ -11,6 +11,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch } from "react-redux";
 import AddDentist from "./AddDentist";
 import { deleteDentist } from "../../../redux/dentists/dentistsReducer";
+import { NavLink } from "react-router-dom";
 
 const Dentist = ({ item }) => {
   const [open, setOpen] = useState(false);
@@ -29,7 +30,9 @@ const Dentist = ({ item }) => {
   return (
     <TableRow key={item._id}>
       <TableCell size="small" align="left">
-        {item.firstName} {item.lastName} {item.fathersName}
+        <NavLink to={`/staff/doctors/doctorProfile/${item._id}`}>
+          {item.firstName} {item.lastName} {item.fathersName}
+        </NavLink>
       </TableCell>
       <TableCell size="small" align="left">
         {item.email}
@@ -59,7 +62,6 @@ const Dentist = ({ item }) => {
               handleClose={handleClose}
             />
           </Dialog>
-
           <Button onClick={() => handleDelete(item._id)} color="error">
             <DeleteIcon />{" "}
           </Button>

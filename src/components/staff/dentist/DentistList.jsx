@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Button,
   Dialog,
@@ -14,8 +14,7 @@ import {
 } from "@mui/material";
 import ArticleIcon from "@mui/icons-material/Article";
 import TablePreloader from "../../preloaders/TablePreloader";
-import { useDispatch, useSelector } from "react-redux";
-import { loadDentistList } from "../../../redux/dentists/dentistsReducer";
+import { useSelector } from "react-redux";
 import Dentist from "./Dentist";
 import AddDentist from "./AddDentist";
 import { NavLink } from "react-router-dom";
@@ -23,7 +22,6 @@ import { NavLink } from "react-router-dom";
 const DentistList = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-  const dispatch = useDispatch();
   const state = useSelector((state) => state.dentistsReducer);
   const dentists = state.dentists;
   const loading = state.loading;
@@ -44,10 +42,6 @@ const DentistList = () => {
   const handleClose = () => {
     setOpen(false);
   };
-
-  useEffect(() => {
-    dispatch(loadDentistList());
-  }, [dispatch]);
   return (
     <Paper elevation={1}>
       <TableContainer>
