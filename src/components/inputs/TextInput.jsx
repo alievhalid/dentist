@@ -1,10 +1,11 @@
 import React from "react";
 import { TextField } from "@mui/material";
 
-const TextInput = ({ id, name, formik, label, type, required }) => {
+const TextInput = ({ id, name, formik, label, type, required, }) => {
   return (
     <>
       <TextField
+        inputProps={{step: "30"}}
         value={formik.values[name]}
         onChange={formik.handleChange}
         name={name}

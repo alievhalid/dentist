@@ -3,7 +3,7 @@ import TextField from "@mui/material/TextField";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import { DatePicker, LocalizationProvider } from "@mui/lab";
 
-export default function DateInput({ required, formik, name, label }) {
+export default function DateOrTimeInput({ required, formik, name, label, type }) {
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <TextField
@@ -13,7 +13,7 @@ export default function DateInput({ required, formik, name, label }) {
         fullWidth
         id="date"
         label={label}
-        type="date"
+        type={type}
         required={required}
         error={!!formik?.errors[name] && formik.touched[name]}
         helperText={

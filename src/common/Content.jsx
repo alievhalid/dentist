@@ -10,6 +10,7 @@ import Visit from "../components/patients/visit/Visit";
 import Formul from "../components/patients/formul/Formul";
 import ServiceList from "../components/services/ServiceList";
 import DentistList from "../components/staff/dentist/DentistList";
+import Journal from "../components/journal/Journal";
 function Content() {
   return (
     <div className={styles.content}>
@@ -18,7 +19,7 @@ function Content() {
         <Route path="/staff" element={<Staff />} />
         <Route path="/staff/doctors" element={<DentistList />} />
         <Route path="/patients" element={<Patients />} />
-        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/calendar" element={<Journal />} />
         <Route path="/services" element={<ServiceList/>} />
         <Route path="/" element={<Calendar />} />
         <Route path={"/patients/profile/:id"} element={<Profile />} />

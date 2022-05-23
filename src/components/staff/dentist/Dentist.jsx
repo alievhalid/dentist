@@ -25,7 +25,7 @@ const Dentist = ({ item }) => {
     setOpen(true);
   };
   const handleDelete = (id) => {
-    dispatch(deleteService(id));
+    dispatch(deleteDentist(id));
   };
 
   return (
