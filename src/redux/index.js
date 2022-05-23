@@ -5,6 +5,7 @@ import authReducer from "./auth/authReducer";
 import serviceReducer from "./service/serviceReducer";
 import dentistsReducer from "./dentists/dentistsReducer";
 import patientsReducer from "./patients/patientsReducer"
+import noteReducer from "./Notes/notesReducer";
 import adminReducer from "./admin/adminReducer"
 const logger = createLogger({
   diff: true,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   authReducer,
   serviceReducer,
   dentistsReducer,
+  noteReducer,
   patients: patientsReducer,
   admins: adminReducer,
 });

@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Grid } from "@mui/material";
 import TextInput from "../../inputs/TextInput";
 import SelectInput from "../../inputs/SelectInput";
-import DateInput from "../../inputs/DateInput";
+import DateOrTimeInput from "../../inputs/DateOrTimeInput";
 import NumberInput from "../../inputs/NumberInput";
 import PasswordInput from "../../inputs/PasswordInput";
 import * as Yup from "yup";
@@ -148,9 +148,10 @@ const AddDentist = ({ handleClose }) => {
             />
           </Grid>
           <Grid item xs={4}>
-            <DateInput
+            <DateOrTimeInput
               formik={formik}
               name="birthday"
+              type="date"
               required={true}
               label="Дата рождения"
             />
@@ -254,8 +255,14 @@ const AddDentist = ({ handleClose }) => {
             </Button>
           </Grid>
           <Grid item xs={6}>
-            <Button type="submit" variant="contained" fullWidth size="large">
-              Зарегистрировать врача
+            <Button
+                type="submit"
+                variant="contained"
+                fullWidth
+                size="large"
+                // onClick={formik.values.password.length >= 8 ?  handleClose : false}
+            >
+              {item ? "Сохранить изменения" : "Зарегистрировать врача"}
             </Button>
           </Grid>
         </Grid>

@@ -1,0 +1,16 @@
+.table{
+  display: flex;
+  overflow-x: scroll;
+  max-width: 85vw;
+  &__time{
+    width: 170px;
+    border: 1px solid gray;
+  }
+  &__doc{
+    //border: 0.2px solid gray;
+    min-width: 200px !important;
+  }
+  &__cell{
+
+  }
+}

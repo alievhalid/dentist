@@ -1,0 +1,15 @@
+.note{
+  height: 40px;
+  border: 0.2px solid gainsboro;
+  padding: 2px;
+  cursor: pointer;
+  &__time{
+    color: gray;
+    font-size: 10px;
+  }
+  &__doctor-note{
+  }
+  &:hover{
+    border: 0.2px solid #399fd4;
+  }
+}

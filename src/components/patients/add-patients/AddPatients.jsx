@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Grid } from "@mui/material";
 import TextInput from "../../inputs/TextInput";
 import SelectInput from "../../inputs/SelectInput";
-import DateInput from "../../inputs/DateInput";
+import DateOrTimeInput from "../../inputs/DateOrTimeInput";
 import NumberInput from "../../inputs/NumberInput";
 import * as Yup from "yup";
 import { useFormik } from "formik";
@@ -118,7 +118,7 @@ const AddPatients = ({ handleClose, item }) => {
             />
           </Grid>
           <Grid item xs={4}>
-            <DateInput
+            <DateOrTimeInput
               formik={formik}
               name="birthday"
               required={true}

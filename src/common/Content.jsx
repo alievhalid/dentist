@@ -9,6 +9,7 @@ import Visit from "../components/patients/visit/Visit";
 import Formul from "../components/patients/formul/Formul";
 import ServiceList from "../components/services/ServiceList";
 import DentistList from "../components/staff/dentist/DentistList";
+import Journal from "../components/journal/Journal";
 import AdminList from "../components/staff/admin/AdminList";
 import AdminProfile from "../components/staff/admin/adminProfile/AdminProfile";
 import DentistProfile from "../components/staff/dentist/dentistProfile/DentistProfile";
@@ -20,7 +21,7 @@ function Content() {
         <Route path={"/staff/doctors"} element={<DentistList />} />
         <Route path={"/staff/admins"} element={<AdminList />} />
         <Route path="/patients" element={<Patients />} />
-        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/calendar" element={<Journal />} />
         <Route path="/services" element={<ServiceList/>} />
         <Route path="/" element={<Calendar />} />
         <Route path={"/patients/profile/:id"} element={<Profile />} />
