@@ -6,7 +6,7 @@ import serviceReducer from "./service/serviceReducer";
 import dentistsReducer from "./dentists/dentistsReducer";
 import patientsReducer from "./patients/patientsReducer"
 import noteReducer from "./Notes/notesReducer";
-
+import adminReducer from "./admin/adminReducer"
 const logger = createLogger({
   diff: true,
   collapsed: true,
@@ -18,6 +18,7 @@ const rootReducer = combineReducers({
   dentistsReducer,
   noteReducer,
   patients: patientsReducer,
+  admins: adminReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));

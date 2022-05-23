@@ -1,0 +1,146 @@
+.profile {
+    max-width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    font-family: "PT Sans", sans-serif;
+  }
+  .wrap {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e5e5;
+    align-items: center;
+    padding-bottom: 10px;
+    nav {
+      width: 300px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .icons {
+        display: flex;
+        padding: 8px 15px;
+        border-radius: 30px;
+        margin-right: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        background-color: #f3f3f3;
+        align-items: center;
+        cursor: pointer;
+        svg {
+          margin-right: 10px;
+          color: #87939e;
+        }
+      }
+      span .icons {
+        background-color: #0787c9;
+        color: #fff;
+        svg {
+          color: #fff;
+        }
+        &:hover {
+          background-color: #0787c9;
+        }
+      }
+    }
+    .options {
+      font-size: 18px;
+    }
+    span {
+      color: #0787c9;
+    }
+  }
+  .info {
+    max-width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .info-one {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    .image {
+      width: 150px;
+      img {
+        width: 60px;
+        margin-top: 30px;
+        margin-left: 10px;
+      }
+      margin-bottom: 5px;
+    }
+    .profile-info {
+      width: 400px;
+      .name {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .activity {
+        margin-bottom: 10px;
+      }
+      .age {
+        margin-bottom: 10px;
+      }
+      .floor {
+        margin-bottom: 10px;
+      }
+      .number {
+        color: #0787c9;
+        display: flex;
+        align-items: center;
+        svg {
+          font-size: 18px;
+          font-weight: bold;
+          margin-left: 5px;
+          color: #6c757d;
+        }
+      }
+
+    }
+  }
+  .info-two {
+    width: 200px;
+    span {
+      color: #6c757d;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .card {
+      margin-bottom: 15px;
+    }
+  }
+  .info-three {
+    width: 200px;
+    font-weight: bold;
+    font-size: 14px;
+    .deposit {
+      margin-bottom: 10px;
+      svg {
+        color: #b5c6d8;
+      }
+    }
+    .payment {
+      margin-bottom: 10px;
+    }
+    span {
+      color: #6c757d;
+    }
+  }
+  .info-four {
+    width: 200px;
+    font-size: 14px;
+    font-weight: bold;
+    .deposit {
+      margin-bottom: 10px;
+      svg {
+        color: #6c757d;
+      }
+    }
+    span {
+      color: #6c757d;
+    }
+    .visit {
+      margin-bottom: 10px;
+    }
+  }
+  

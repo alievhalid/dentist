@@ -13,20 +13,16 @@ import {
   TextField,
 } from "@mui/material";
 import ArticleIcon from "@mui/icons-material/Article";
-import TablePreloader from "../../preloaders/TablePreloader";
 import { useSelector } from "react-redux";
-import Dentist from "./Dentist";
-import AddDentist from "./AddDentist";
 import { NavLink } from "react-router-dom";
-
-const DentistList = () => {
+import AddAdmin from "./AddAdmin";
+import Admins from "./Admins";
+const AdminList = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-  const state = useSelector((state) => state.dentistsReducer);
-  const dentists = state.dentists;
-  const loading = state.loading;
-  const addLoading = state.addLoading;
   const [open, setOpen] = useState(false);
+  const admins = useSelector((state) => state.admins.admin);
+  const loading = useSelector((state) => state.admins.loading);
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -49,8 +45,8 @@ const DentistList = () => {
           <TableHead>
             <TableRow>
               <TableCell width={300} sx={{ padding: "14px" }}>
-                <NavLink to="/staff/doctors">Доктора</NavLink>
-                <NavLink to="/staff/admins"> Администраторы</NavLink>
+                <NavLink to="/staff/doctors">Доктора </NavLink>
+                <NavLink to="/staff/admins">Администраторы</NavLink>
               </TableCell>
               <TableCell width={300} sx={{ padding: "14px" }}></TableCell>
               <TableCell width={300} sx={{ padding: "14px" }}>
@@ -77,8 +73,9 @@ const DentistList = () => {
                   maxWidth={"md"}
                   fullWidth
                 >
-                  <AddDentist
-                    addLoading={addLoading}
+                  <AddAdmin
+                    item={admins}
+                    addLoading={loading}
                     setOpen={setOpen}
                     handleClose={handleClose}
                   />
@@ -90,29 +87,27 @@ const DentistList = () => {
             <TableRow>
               <TableCell sx={{ padding: "14px" }}>Имя</TableCell>
               <TableCell sx={{ padding: "14px" }}>Email</TableCell>
-              <TableCell sx={{ padding: "14px" }}>Номер телефона</TableCell>
+              <TableCell sx={{ padding: "14px" }}>Login</TableCell>
               <TableCell align="center" sx={{ padding: "14px" }}>
                 <span>Действия</span>
               </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {loading ? (
-              <TablePreloader />
-            ) : (
-              dentists
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((item) => {
-                  return <Dentist key={item._id} item={item} />;
-                })
-            )}
+            {loading
+              ? null
+              : admins
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                  .map((item, index) => {
+                    return <Admins key={index} item={item} />;
+                  })}
           </TableBody>
         </Table>
       </TableContainer>
       <TablePagination
         rowsPerPageOptions={[5, 10, 25]}
         component="div"
-        count={dentists.length}
+        count={admins.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}
@@ -122,4 +117,4 @@ const DentistList = () => {
   );
 };
 
-export default DentistList;
+export default AdminList;
