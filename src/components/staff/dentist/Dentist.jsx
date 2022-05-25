@@ -26,13 +26,12 @@ const Dentist = ({ item }) => {
   const handleDelete = (id) => {
     dispatch(deleteDentist(id));
   };
-
   return (
     <TableRow key={item._id}>
       <TableCell size="small" align="left">
-        <NavLink to={`/staff/doctors/doctorProfile/${item._id}`}>
-          {item.firstName} {item.lastName} {item.fathersName}
-        </NavLink>
+          <NavLink to={`/staff/doctors/doctorProfile/${item._id}`}>
+            {item.firstName} {item.lastName} {item.fathersName}
+          </NavLink>
       </TableCell>
       <TableCell size="small" align="left">
         {item.email}

@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./adminProfile.module.scss";
 import PaidIcon from "@mui/icons-material/Paid";
-import EditIcon from "@mui/icons-material/Edit";
-import AddTaskIcon from "@mui/icons-material/AddTask";
 import logo from "../../../../images/logo.png";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -29,22 +27,6 @@ function Profile() {
               /<span>{profile?.lastName} </span>
               <span> {profile?.firstName} </span>
             </div>
-            <nav>
-              <div className={styles.icons}>
-                <div>
-                  <EditIcon />
-                </div>
-                <div>Редактировать</div>
-              </div>
-              <span>
-                <div className={styles.icons}>
-                  <div>
-                    <AddTaskIcon />
-                  </div>
-                  <div>Добавить</div>
-                </div>
-              </span>
-            </nav>
           </div>
           <div className={styles.info}>
             <div className={styles["info-one"]}>

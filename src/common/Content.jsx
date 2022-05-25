@@ -14,11 +14,11 @@ import AdminList from "../components/staff/admin/AdminList";
 import AdminProfile from "../components/staff/admin/adminProfile/AdminProfile";
 import DentistProfile from "../components/staff/dentist/dentistProfile/DentistProfile";
 function Content() {
-  return (
+    return (
     <div className={styles.content}>
       <Header />
       <Routes>
-        <Route path={"/staff/doctors"} element={<DentistList />} />
+        <Route path={"/staff"} element={<DentistList />} />
         <Route path={"/staff/admins"} element={<AdminList />} />
         <Route path="/patients" element={<Patients />} />
         <Route path="/calendar" element={<Journal />} />

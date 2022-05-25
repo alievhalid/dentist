@@ -49,7 +49,7 @@ const DentistList = () => {
           <TableHead>
             <TableRow>
               <TableCell width={300} sx={{ padding: "14px" }}>
-                <NavLink to="/staff/doctors">Доктора</NavLink>
+                <NavLink to="/staff">Доктора</NavLink>
                 <NavLink to="/staff/admins"> Администраторы</NavLink>
               </TableCell>
               <TableCell width={300} sx={{ padding: "14px" }}></TableCell>

@@ -3,7 +3,6 @@ import ArticleIcon from "@mui/icons-material/Article";
 import styles from "./patients.module.scss";
 import {
   Button,
-  ButtonGroup,
   Dialog,
   Paper,
   Table,
@@ -15,7 +14,7 @@ import {
   TableRow,
   TextField,
 } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import AddPatients from "./add-patients/AddPatients";
 import Patient from "./Patient";
 function PatientList() {
