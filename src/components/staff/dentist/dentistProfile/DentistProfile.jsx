@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./dentist-profile.module.scss";
 import PaidIcon from "@mui/icons-material/Paid";
-import EditIcon from "@mui/icons-material/Edit";
-import AddTaskIcon from "@mui/icons-material/AddTask";
 import logo from "../../../../images/logo.png";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -15,36 +13,22 @@ function DentistProfile() {
     })
   );
   const loadProfile = useSelector((state) => state.dentistsReducer.loading);
+  console.log(dentists?.color);
   return (
     <div>
-      {loadProfile ? (
-        null
-      ) : (
-        <div className={styles.profile}>
+      {loadProfile ? null : (
+        <div
+          className={styles.profile}
+          style={{ borderBottom: `solid 5px ${dentists?.color}` }}
+        >
           <div className={styles.wrap}>
             <div className={styles.options}>
               <span>
-                <NavLink to={"/staff/doctors"}>Доктора</NavLink>
+                <NavLink to={"/staff"}>Доктора</NavLink>
               </span>
               /<span>{dentists?.lastName} </span>
               <span> {dentists?.firstName} </span>
             </div>
-            <nav>
-              <div className={styles.icons}>
-                <div>
-                  <EditIcon />
-                </div>
-                <div>Редактировать</div>
-              </div>
-              <span>
-                <div className={styles.icons}>
-                  <div>
-                    <AddTaskIcon />
-                  </div>
-                  <div>Добавить</div>
-                </div>
-              </span>
-            </nav>
           </div>
           <div className={styles.info}>
             <div className={styles["info-one"]}>
@@ -52,16 +36,23 @@ function DentistProfile() {
                 <img src={logo} alt="" />
               </div>
               <div className={styles["profile-info"]}>
-                <div className={styles.name}  style={{color: `${dentists?.color}`}}>
+                <div
+                  className={styles.name}
+                  style={{ color: `${dentists?.color}` }}
+                >
                   <span>{dentists?.lastName} </span>
                   <span> {dentists?.firstName} </span>
                   <span>{dentists?.fathersName} </span>
                 </div>
                 <div className={styles.floor}>
-                  <span>Почта</span>: {dentists?.email ? dentists?.email : 'не указано'}
+                  <span>Почта</span>:{" "}
+                  {dentists?.email ? dentists?.email : "не указано"}
                 </div>
                 <div className={styles.age}>
-                  Лет: 21 <span>({dentists?.birthday ? dentists?.birthday : 'не указано'})</span>
+                  Лет: 21{" "}
+                  <span>
+                    ({dentists?.birthday ? dentists?.birthday : "не указано"})
+                  </span>
                 </div>
                 <div className={styles.floor}>
                   <span>Логин</span>: {dentists?.login}
@@ -70,24 +61,28 @@ function DentistProfile() {
                   <span>Номер</span>: {dentists?.phoneNumber}
                 </div>
                 <div className={styles.floor}>
-                  <span>Должность</span>: {dentists?.role}
+                  <span>Номер 2</span>:{" "}
+                  {dentists?.secondPhoneNumber
+                    ? dentists?.secondPhoneNumber
+                    : "не указано"}
                 </div>
               </div>
             </div>
             <div className={styles["info-two"]}>
               <div className={styles.card}>
                 <span>Специальность</span>
-                <div>{dentists?.speciality.map((item,index) => {
-                    return <div key={index}>{item},</div>
-                })}</div>
+                <div>
+                  {dentists?.speciality.map((item, index) => {
+                    return <div key={index}>{item},</div>;
+                  })}
+                </div>
               </div>
               <div className={styles.card}>
-                <span>статус</span>
-                <div>Первичный прием</div>
+                <span>Зарплата</span>
+                <div>{dentists?.salary ? dentists?.salary : "не указано"}</div>
               </div>
-              <div className={styles.card}>
-                <span>Лечащий врач</span>
-                <div>-</div>
+              <div className={styles.floor}>
+                <span>Должность</span>: {dentists?.role}
               </div>
             </div>
             <div className={styles["info-three"]}>
@@ -103,7 +98,9 @@ function DentistProfile() {
               </div>
               <div className={styles.discount}>
                 <span>Скидка</span>
-                <div>{dentists?.percent ? dentists?.percent + "%" : "не указано" }</div>
+                <div>
+                  {dentists?.percent ? dentists?.percent + "%" : "не указано"}
+                </div>
               </div>
             </div>
             <div className={styles["info-four"]}>

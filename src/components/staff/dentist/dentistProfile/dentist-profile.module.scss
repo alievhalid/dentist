@@ -3,6 +3,7 @@
     padding: 10px;
     background-color: #fff;
     font-family: "PT Sans", sans-serif;
+    border-radius: 5px;
   }
   .wrap {
     max-width: 100%;
@@ -43,7 +44,9 @@
       }
     }
     .options {
-      font-size: 18px;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 10px;
     }
     span {
       color: #0787c9;

@@ -1,4 +1,5 @@
 
+
 const initialState = {
     token : localStorage.getItem('token'),
     role: localStorage.getItem('role'),
@@ -36,7 +37,7 @@ const authReducer = (state= initialState, action) => {
 export const auth = (login, password) =>{
     return async (dispatch) => {
         dispatch({ type: "user/signIn/pending" });
-        const response = await fetch('http://localhost:4000/login', {
+        const response = await fetch('http://localhost:4000/admin/login', {
             method: 'POST',
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
@@ -54,6 +55,7 @@ export const auth = (login, password) =>{
             dispatch({ type: "user/singIn/fulfilled", payload: json });
             localStorage.setItem("token", json.token);
             localStorage.setItem("role", json.role);
+            
         }
 
 

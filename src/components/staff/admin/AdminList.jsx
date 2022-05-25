@@ -45,7 +45,7 @@ const AdminList = () => {
           <TableHead>
             <TableRow>
               <TableCell width={300} sx={{ padding: "14px" }}>
-                <NavLink to="/staff/doctors">Доктора </NavLink>
+                <NavLink to="/staff">Доктора </NavLink>
                 <NavLink to="/staff/admins">Администраторы</NavLink>
               </TableCell>
               <TableCell width={300} sx={{ padding: "14px" }}></TableCell>
@@ -57,7 +57,6 @@ const AdminList = () => {
                   placeholder="Поиск по таблице"
                 />
               </TableCell>
-
               <TableCell sx={{ padding: "14px" }} align={"center"}>
                 <Button
                   variant="contained"
